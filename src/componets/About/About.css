@@ -1,0 +1,24 @@
+.About{
+ max-width: 1400px;
+ height: 624px;
+ display: flex;
+ align-items: center;
+
+ position: relative;
+}
+.about_me-avatar{
+    height: 464px;
+    width: 464px;
+    border-radius: 1000px;
+    
+}
+.around__circle{
+   position: absolute;
+   height: 170px;
+   max-width: 600px;
+   top:131px;
+   left:624px;
+}
+.about__subtext,.about__subtext_2{
+    max-width: 600px;
+}

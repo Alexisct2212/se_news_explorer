@@ -1,0 +1,22 @@
+.search__bar-container{
+    position: relative;
+    top:80px;
+}
+.search__input{
+    height: 64px;
+    width: 608px;
+    border-radius: 75px;
+    border: none;
+}
+.search__btn{
+    background-color: #2F71E5;
+    color: white;
+    border: none;
+    position: absolute;
+    right:0px;
+    top: -1px;
+    height: 70px;
+    width: 168px;
+    border-radius: 75px;
+    cursor: pointer;
+}

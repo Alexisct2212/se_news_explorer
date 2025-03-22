@@ -1,0 +1,100 @@
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    font-weight: 700;
+    font-family: "CabinetGrotesk";
+  }
+  .modal_opened {
+    visibility: visible;
+  }
+  .modal__close {
+    position: absolute;
+    top: 20px;
+    right: 28px;
+    background-color: transparent;
+    background-image: url(../../assets/Union.svg);
+    height: 20px;
+    width: 20px;
+    border: none;
+    background-repeat: no-repeat;
+    cursor: pointer;
+  }
+  .modal__title {
+    margin: 0;
+    font-size: 16px;
+    line-height: 20px;
+    width: fit-content;
+  }
+  .modal__label {
+    display: flex;
+    flex-direction: column;
+    margin: 24px 0 3px;
+  }
+  
+  .modal__content {
+    background-color: #fff;
+    position: relative;
+    padding: 28px 28px 36px;
+    box-sizing: border-box;
+    width: 100%;
+    width: 496px;
+    height: auto;
+    border-radius: 20px;
+    border: 1px solid #000000 30%;
+  }
+  .modal__form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+  }
+  .modal__input {
+    display: block;
+    border: none;
+    margin: 0;
+    padding-top: 8px;
+    border-bottom: 1px solid #000000;
+  }
+  .modal__radio-buttons {
+    border: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+  }
+  .modal__radio-input {
+    margin-right: 5px;
+  }
+  .modal__submit {
+    width: 124px;
+    height: 36px;
+    color: #fff;
+    border: none;
+    background-color: #000;
+    border-radius: 4px;
+  }
+  .modal__submit:hover {
+    opacity: 60%;
+  }
+  .modal__submit:disabled {
+    opacity: 30%;
+  }
+  .modal__label_type_radio {
+    display: block;
+    margin: 0px 0px 8px 0px;
+    color: rgba(0, 0, 0, 0.5);
+  }
+  .modal__label_type_radio:active {
+    color: #000;
+  }
+  .modal__legend {
+    padding: 24px 0 12px 0;
+  }
+  

@@ -1,0 +1,32 @@
+main{
+    background-image: url("../../assets/Main/header_img.png");
+    background-repeat: no-repeat;
+}
+.Main__div{
+width: 1440px;
+height: 476px;
+color :white;
+background-size: contain;
+padding: none;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+text-align: center;
+}
+.Main__text{
+    position: absolute;
+    top:158px;
+    width: 608px;
+    height: 128px;
+    font-size: 60px;
+    margin: 0;
+}
+.Main__subtext {
+    position: absolute;
+    top:310px;
+    font-size: 18px;
+    color: white;
+    margin: 0;
+    max-width: 600px; /* Optional: Limit the width of the text */
+  }

@@ -1,0 +1,82 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 19px 0 0px;
+  height: 80px;
+  font-size: 18px;
+  line-height: 24.8px;
+  border-bottom: 1px solid #ffffff7a;
+  position: relative;
+}
+
+.header__logo {
+  width: 89px;
+  height: 40px;
+  margin: 15px auto 30px 104px;
+}
+
+.header__user_info {
+  display: flex;
+  align-items: center;
+  margin: 0 108px 0 0;
+}
+
+.header__username {
+  padding-right: 12px;
+}
+
+.Profile__header-link {
+  text-decoration: none;
+  color: black;
+}
+
+.header__signup {
+  background-color: transparent;
+  color: white;
+  width: 176px;
+  height: 48px;
+  border-radius: 100px;
+  border: 1px solid #ffffff;
+  margin: 0px 0px 0px 42px;
+  cursor: pointer;
+}
+
+.header__user_avatar {
+  height: 40px;
+  width: 40px;
+}
+
+.home__page {
+  border: none;
+  color: white;
+  background-color: transparent;
+  cursor: pointer;
+  position: relative;
+}
+
+.selected {
+  color: white;
+}
+
+.selected__button {
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  height: 3px;
+  background: white;
+  width: 100%;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease-in-out;
+}
+
+.selected .selected__button {
+  transform: scaleX(1);
+}
+
+.selected__button.line_active {
+  position: relative;
+  top:29px;
+  height: 3px;
+  background: white;
+}

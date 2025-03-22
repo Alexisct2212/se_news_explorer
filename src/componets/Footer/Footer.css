@@ -1,0 +1,35 @@
+.footer {
+    display: flex;
+    font-size: 16px;
+    line-height: 22px;
+    align-items: center;
+    justify-content: space-between;
+  
+    max-width: 1440px;
+    
+  }
+  .footer__right-side {
+    display: flex;
+    gap: 40px; /* Space between elements on the right side */
+  
+  }
+  .footer__left-side {
+    display: flex; 
+    gap: 10px; /* Space between year and name */
+    color: #b6bcbf;
+  }
+  
+  .footer__year,
+  .footer__developer {
+    margin: 0;
+  }
+  
+  .home__btn,
+  .Tripleten__url,
+  .github__logo,
+  .facebook__logo {
+    margin: 0;
+    cursor: pointer;
+    border: none;
+    background: none;
+  }

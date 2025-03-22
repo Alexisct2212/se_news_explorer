@@ -1,0 +1,150 @@
+.Preloader{
+  max-width: 1440px;
+  height: 374px;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  background-color: #F5F6F7;
+}
+.circle-preloader {
+    width: 74px;
+    height: 74px;
+    border: 4px solid #444;
+    border-bottom-color: #888;
+    border-radius: 50%;
+    position: relative;
+    top: 90px;
+    left:40%;
+    margin: auto;
+    animation: spin .75s infinite linear;
+  }
+  .Preloader__text{
+    position: absolute;
+    left: 49%;
+    bottom: 0%;
+    color: black;
+    height: 20px;
+    
+  }
+
+  
+  @keyframes spin {
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  /* styling for 404 error*/
+  .Preloader_Error{
+   position: absolute;
+    left:720px;
+    margin: 56px auto;
+  }
+  .face {
+    width: 100px;
+    height: 100px;
+    background-color: transparent;
+    border: #D1D2D6 solid 1px;
+    border-radius: 50%;
+    position: relative;
+    left: 50px;
+  }
+  
+  .eye {
+    width: 5px;
+    height: 5px;
+    background-color: #D1D2D6;
+    border-radius: 50%;
+    position: absolute;
+    top: 30px;
+  }
+  
+  .left-eye {
+    left: 25px;
+  }
+  
+  .right-eye {
+    right: 25px;
+  }
+  
+  .mouth {
+    width: 50px;
+    height: 20px;
+    border-bottom: 1px solid #D1D2D6;
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    transform: translatex(45%);
+    rotate: 180deg;
+    border-radius: 50%; /* Creates a downward curve */
+  }
+  .stick {
+    width:50px
+  }
+.text{
+  width: 356px;
+
+}
+.Preloader__Main-text{
+  height: 30px;
+  font-size: 26px;
+  color:#1a1b22;
+  margin: 31px auto 0 auto;
+}
+.preloader__subtext{
+  height: 48px;
+  font-size: 18px;
+  color: #B6BCBF;
+  margin: 16px auto 80px auto;
+}
+
+  /* circle searching
+<div className="Preloader">
+      {foundNews?(
+      <div className="Preloader__search">
+      <div className="circle-preloader">
+      </div>
+      <p className="Preloader__text"> Searching for news ...</p>
+      </div>):(
+      <div className="Preloader_Error">
+      <div className="face">
+         <div className="eye left-eye"></div>
+         <div className="eye right-eye"></div>
+         <div className="mouth"></div>
+         <div className="stick"></div>
+      </div>
+        <p className="Preloader__Main-text">
+          Nothing Found
+        </p>
+        <p className="preloader__subtext">Sorry, but nothing matched your search terms.</p>
+      </div>)}
+    </div>
+
+  */
+  /*
+  sad face
+   <div className="Preloader">
+      {foundNews?(
+         <div className="Preloader_Error">
+      <div className="face">
+      <div className="eye left-eye"></div>
+      <div className="eye right-eye"></div>
+      <div className="mouth"></div>
+      <div className="stick"></div>
+   </div>
+   <div className="text">
+     <p className="preloader__subtext">Sorry, but nothing matched your search terms.</p>
+     <p className="Preloader__Main-text">
+       Nothing Found
+     </p>
+
+   </div>
+   </div>
+      ):(
+        <div className="Preloader__search">
+      <div className="circle-preloader">
+      </div>
+      <p className="Preloader__text"> Searching for news ...</p>
+      </div>
+      )}
+    </div>
+  */
