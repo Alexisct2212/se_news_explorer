@@ -11,7 +11,6 @@ import ProtectedRoute from "../ProtectedRoute/ProtectedRoute"
 import LoginModal from "../LoginModal/LoginModal"
 import RegisterModal from "../RegisterModal/RegisterModal"
 import SearchForm from "../searchForm/SearchForm"
-import Profile from "../Profile/Profile"
 import SavedNews from "../SavedNews/SavedNews"
 // imported 
 import { useEffect, useState } from "react";
