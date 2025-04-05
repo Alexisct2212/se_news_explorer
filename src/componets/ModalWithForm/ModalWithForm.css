@@ -14,15 +14,16 @@
   }
   .modal_opened {
     visibility: visible;
+    z-index: 999;
   }
   .modal__close {
     position: absolute;
-    top: 20px;
-    right: 28px;
+    top: -40px;
+    right: -30px;
     background-color: transparent;
-    background-image: url(../../assets/Union.svg);
-    height: 20px;
-    width: 20px;
+    background-image:url(../../assets/close_btn.png); 
+    height: 40px;
+    width: 40px;
     border: none;
     background-repeat: no-repeat;
     cursor: pointer;

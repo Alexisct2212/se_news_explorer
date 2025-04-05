@@ -3,10 +3,11 @@
   justify-content: space-between;
   padding: 19px 0 0px;
   height: 80px;
+  width: 1440px;
   font-size: 18px;
   line-height: 24.8px;
   border-bottom: 1px solid #ffffff7a;
-  position: relative;
+  position: absolute;
 }
 
 .header__logo {

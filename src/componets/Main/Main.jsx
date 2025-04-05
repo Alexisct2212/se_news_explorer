@@ -1,16 +1,16 @@
 import "./Main.css";
 import Header from "../Header/Header";
 import SearchForm from "../searchForm/SearchForm";
-function Main() {
+import NewsCard from "../NewsCard/NewsCard";
+function Main(isLoggedIn,activeModal,handleLoginModal,handleRegisterModal) {
   
   return (
     <main className="Main">
-      <Header/>
       <div className="Main__div">
-      <p className="Main__text">What's going on in the world</p>
+      <p className="Main__text">What's going on in the world?</p>
       <p className="Main__subtext">Find the latest news on any topic and save them in your personal account</p>
-      <SearchForm/>
       </div>
+      <NewsCard/>
     </main>
   );
 }

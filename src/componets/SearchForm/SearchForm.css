@@ -1,6 +1,9 @@
 .search__bar-container{
+    display: flex;
     position: relative;
-    top:80px;
+    top:-100px;
+    left: 70px;
+    width: 776px;
 }
 .search__input{
     height: 64px;
@@ -9,11 +12,11 @@
     border: none;
 }
 .search__btn{
-    background-color: #2F71E5;
+    background-color:#2F71E5;
     color: white;
-    border: none;
+    border:none;
     position: absolute;
-    right:0px;
+    right:163px;
     top: -1px;
     height: 70px;
     width: 168px;

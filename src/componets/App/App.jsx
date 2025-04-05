@@ -17,27 +17,30 @@ import { useEffect, useState } from "react";
 import { Routes, Route, useNavigate } from "react-router-dom";
 function App(){
     const [activeModal, setActiveModal] = useState("");
-    const [selectedCard, setSelectedCard] = useState({});
     const [currentUser, setCurrentUser] = useState(null);
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     const [foundNews, setFoundNews] = useState(false)
     const navigate = useNavigate();
     //Open And Close func
-    const handleAddClick = () => {
-        setActiveModal("add-garment");
-      };
-      const handleCardClick = (card) => {
-        setActiveModal("preview");
-        setSelectedCard(card);
-      };
+    
       const closeActiveModal = () => {
         setActiveModal("");
-        setSelectedCard({});
+      };
+      const handleLoginModal = () => {
+        console.log("Login Modal Opened!");
+        setActiveModal("login"); 
+      };
+      const handleRegisterModal = () => {
+        setActiveModal("signup");
       };
     return(
     <div className="page">
       <div className="page__content">
-      
+      <Header 
+      isLoggedIn={isLoggedIn}
+      activeModal={activeModal}
+      handleLoginModal={handleLoginModal}
+      handleRegisterModal={handleRegisterModal}/>
       <Routes>
         <Route
         path="/"
@@ -46,6 +49,7 @@ function App(){
           isLoggedIn={isLoggedIn}
           foundNews={foundNews}
           />
+          
         }
         />
         <Route
@@ -57,9 +61,23 @@ function App(){
         }
         />
       </Routes>
-      <Preloader
-      foundNews={foundNews}
-      />
+      
+      <LoginModal
+            activeModal={activeModal}
+            closeActiveModal={closeActiveModal}
+            handleLoginModal={()=>handleLoginModal("login")}
+            handleRegisterModal={() => handleRegisterModal("signup")}
+            isOpen={activeModal === "login"}
+            
+          />
+       <RegisterModal
+            activeModal={activeModal}
+            handleLoginModal={() => handleLoginModal("login")}
+            handleRegisterModal={()=>handleRegisterModal("signup")}
+            closeActiveModal={closeActiveModal}
+            isOpen={activeModal === "signup"}
+            
+          />
       <About/>
       <Footer/>
       </div>

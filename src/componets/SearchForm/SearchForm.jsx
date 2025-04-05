@@ -1,26 +1,33 @@
 import { useState } from "react";
 import "./SearchForm.css";
 
-
-function SearchForm(){
-  
+function SearchForm({ onSearch }) {
   const [search, setSearch] = useState("");
 
-  const handleSearch = (event) => {
+  const handleSearchChange = (event) => {
     setSearch(event.target.value);
   };
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (search.trim()) {
+      onSearch(search); // ✅ Pass the current search directly
+    }
+  };
+
   return (
-    <div className="search__bar-container">
-     <input
+    <form className="search__bar-container" onSubmit={handleSubmit}>
+      <input
         type="text"
-        placeholder="    Enter topic"
+        placeholder="Enter topic"
         value={search}
-        onChange={handleSearch}
+        onChange={handleSearchChange}
         className="search__input"
       />
-      <button className="search__btn">Search</button>
-    </div>
+      <button type="submit" className="search__btn">
+        Search
+      </button>
+    </form>
   );
 }
 

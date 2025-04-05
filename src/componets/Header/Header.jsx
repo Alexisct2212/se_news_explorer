@@ -4,10 +4,9 @@ import { Link } from "react-router-dom";
 import CurrentUserContext from "../../context/CurrenteUserContext";
 import { useContext, useState } from "react";
 
-function Header({ activeModal, isLoggedIn, handleRegisterModal }) {
+function Header({ activeModal, isLoggedIn,handleLoginModal}) {
   const CurrentUser = useContext(CurrentUserContext);
   const [activeButton, setActiveButton] = useState("");
-
   const handleButtonClick = (button) => {
     setActiveButton(button);
   };
@@ -35,11 +34,11 @@ function Header({ activeModal, isLoggedIn, handleRegisterModal }) {
             <div className={`selected__button ${activeButton === "saved" ? "line_active" : ""}`}></div>
           </button>
           <div className="user__logout-btn">
-            <p className="header__username">{CurrentUser.name}</p>
+            <p className="header__username">{"alexis"}</p>
           </div>
         </div>
       ) : (
-        <div className='header__user_info'>
+        <div className={`header__user_info ${activeModal === "login" && "modal_opened"}`}>
           <button
             className={`home__page ${activeButton === "home" ? "selected" : ""}`}
             onClick={() => handleButtonClick("home")}
@@ -47,19 +46,20 @@ function Header({ activeModal, isLoggedIn, handleRegisterModal }) {
             Home
             <div className={`selected__button ${activeButton === "home" ? "line_active" : ""}`}></div>
           </button>
+          
           <button
             className={`header__signup ${activeButton === "signin" ? "selected" : ""}`}
             type="button"
-            onClick={() => {
-              handleButtonClick("signin");
-              handleRegisterModal();
-            }}
+            onClick={()=>handleLoginModal()}
           >
             Sign in
             <div className={`selected__button ${activeButton === "signin" ? "line_active" : ""}`}></div>
+            
           </button>
+          
         </div>
       )}
+      
     </header>
   );
 }
