@@ -1,7 +1,7 @@
 .search__bar-container{
     display: flex;
     position: relative;
-    top:-100px;
+    top:-140px;
     left: 70px;
     width: 776px;
 }
@@ -22,4 +22,11 @@
     width: 168px;
     border-radius: 75px;
     cursor: pointer;
+}
+.search__btn:hover{
+    background-color: #347EFF;
+    
+}
+.search__btn:active{
+    background-color:#2A65CC;
 }

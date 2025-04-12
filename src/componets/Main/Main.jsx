@@ -2,6 +2,7 @@ import "./Main.css";
 import Header from "../Header/Header";
 import SearchForm from "../searchForm/SearchForm";
 import NewsCard from "../NewsCard/NewsCard";
+import About from "../About/About";
 function Main(isLoggedIn,activeModal,handleLoginModal,handleRegisterModal) {
   
   return (
@@ -11,7 +12,9 @@ function Main(isLoggedIn,activeModal,handleLoginModal,handleRegisterModal) {
       <p className="Main__subtext">Find the latest news on any topic and save them in your personal account</p>
       </div>
       <NewsCard/>
+      <About/>
     </main>
+   
   );
 }
 

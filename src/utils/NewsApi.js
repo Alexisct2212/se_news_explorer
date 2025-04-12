@@ -1,8 +1,7 @@
-const NewsApi = async () => {
+const NewsApi = async (apiKey,searchTerm) => {
     try {
-      const response = await fetch(`https://newsapi.org/v2/everything?q=tesla&apiKey=9311ed1a839b439e8feb735c8169a497
+      const response = await fetch(`https://newsapi.org/v2/everything?q=${searchTerm}&language=en&pageSize=20&apiKey=${apiKey}`);
 
-`);
   
       if (!response.ok) {
         throw new Error(`HTTP error! Status: ${response.status}`); // ❌ Handle fetch errors

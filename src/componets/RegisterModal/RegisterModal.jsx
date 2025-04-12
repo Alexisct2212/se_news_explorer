@@ -99,7 +99,7 @@ const RegisterModal = ({
           className="modal__login-button"
           onClick={handleLoginModal}
         >
-          or Log In
+          or Sign in
         </button>
       </div>
     </ModalWithForm>

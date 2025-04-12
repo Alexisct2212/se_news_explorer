@@ -21,11 +21,35 @@
   align-items: center;
   margin: 0 108px 0 0;
 }
-
-.header__username {
-  padding-right: 12px;
+.saved__articles{
+  margin-left: 66px;
+  width: 120px;
+  height: 24px;
+  background-color: transparent;
+  border: none;
+  color:#B6BCBF;
 }
 
+.user__logout-btn{
+  width: 140px;
+  height: 60px;
+  margin: 0 0 0 64px;
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+  border:1px solid #D1D2D6;
+  border-radius: 40px;
+}
+.header__username {
+  background: transparent;
+  border-radius: 50px;
+  width: 100px;
+  color:white
+}
+.logout_header-img{
+  width: 24px;
+  height: 24px;
+}
 .Profile__header-link {
   text-decoration: none;
   color: black;
@@ -80,4 +104,33 @@
   top:29px;
   height: 3px;
   background: white;
+}
+.header--transparent {
+  background-color: transparent;
+  color: white;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Solid white for other pages */
+.header--white {
+  background-color: white;
+  color: black;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.header--white .home__page,
+.header--white .saved__articles,
+.header--white .header__signup,
+.header--white .header__username {
+  color: black;
+  border-color: black;
+}
+
+.header--white .selected__button,
+.header--white .selected__button.line_active {
+  background-color: black;
+}
+
+@media (width<=1439px) {
+  .header{width: 100%;}
 }

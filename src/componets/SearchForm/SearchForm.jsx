@@ -11,7 +11,7 @@ function SearchForm({ onSearch }) {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (search.trim()) {
-      onSearch(search); // ✅ Pass the current search directly
+      onSearch(search.trim()); // ✅ Pass the current search directly
     }
   };
 
