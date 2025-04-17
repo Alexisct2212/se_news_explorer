@@ -1,6 +1,11 @@
+import { useContext } from "react";
+import CurrentUserContext from "../../context/CurrenteUserContext";
 import "../NewsCard/NewsCard.css";
 import { useLocation } from "react-router-dom";
-function NewsCardItem({ article, isSaved, onSave, onDelete }) {
+function NewsCardItem({ article, isSaved, onSave, onDelete,isLoggedIn }) {
+  const currentUser = useContext(CurrentUserContext);
+  const location = useLocation();
+  const isHome = location.pathname === "/";
   const handleClick = () => {
     const saved = JSON.parse(localStorage.getItem("savedArticles")) || [];
     const alreadySaved =saved.some((a)=>a.url===article.url)
@@ -12,14 +17,11 @@ function NewsCardItem({ article, isSaved, onSave, onDelete }) {
       localStorage.setItem("savedArticles", JSON.stringify([article,...saved]));
     }
   };
- const location = useLocation();
- const isHome = location.pathname === "/";
   return (
    
     <div  className="news-card" width="350">
-    <img src={article.urlToImage} alt={article.title} width="300" />
-    <button className={`${isHome ? "news__save_btn ":"news__delete-btn"}`} onClick={handleClick}
-></button>
+    <img src={article.urlToImage} alt={article.title} width="300" height="200" />
+    {currentUser?._id &&(<button className={`${isHome ? "news__save_btn ":"news__delete-btn"}`} onClick={handleClick}></button>)}
     <p className="news__date"> {new Date(article.publishedAt).toLocaleDateString("en-US", {
 year: "numeric",
 month: "long",

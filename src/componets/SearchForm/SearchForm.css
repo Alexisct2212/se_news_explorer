@@ -6,6 +6,7 @@
     width: 776px;
 }
 .search__input{
+    text-indent: 25px;
     height: 64px;
     width: 608px;
     border-radius: 75px;
@@ -29,4 +30,21 @@
 }
 .search__btn:active{
     background-color:#2A65CC;
+}
+@media (width<=769px) {
+    .search__bar-container{
+        top:-140px;
+        left: 0px;
+        max-width: 448px;
+    }
+    .search__input{
+       max-width: 448px;
+       height: 56px;
+    }
+    .search__btn{
+    right:-1px;
+    top: 0px;
+    height: 60px;
+    width: 160px;
+    }
 }

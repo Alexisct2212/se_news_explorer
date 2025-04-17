@@ -1,0 +1,12 @@
+.modal__login-button{
+    display: flex;
+    position: relative;
+    top: 87px;
+    left: 145px;
+    opacity: .5;
+    background: none;
+    border: none;
+    margin-left: 8px;
+    background-color: transparent;
+    border:none;
+}

@@ -13,7 +13,7 @@
     position: absolute;
     font-size: 40px;
     line-height: 46px;
-    top:600px
+    top:650px
   }
   
   
@@ -114,4 +114,7 @@
 }
 .news__delete-btn:hover{
   background-image: url(../../assets/trash.png);
+}
+@media (width<770px) {
+  .news-list{grid-template-columns: repeat(auto-fill, minmax(224px, 1fr));}
 }

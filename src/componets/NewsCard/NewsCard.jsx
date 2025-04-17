@@ -4,11 +4,11 @@ import { motion, AnimatePresence } from "framer-motion";
 import Preloader from "../Preloader/Preloader";
 import NewsApi from "../../utils/NewsApi";
 import SearchForm from "../searchForm/SearchForm";
-import NewsCardItem from "../NewsCardItem/NewsCardItem";
+import NewsCardItem from "../NewsCardItem/NewsCarditem";
 
 const API_KEY = "9311ed1a839b439e8feb735c8169a497";
 
-const NewsCard = ({article,isSaved,onDelete}) => {
+const NewsCard = ({isLoggedIn}) => {
   const [news, setNews] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
   const [visibleCount, setVisibleCount] = useState(3);
@@ -67,6 +67,7 @@ const NewsCard = ({article,isSaved,onDelete}) => {
               article={article}
               isSaved={true}
               fromSavedPage={true}
+              isLoggedIn={isLoggedIn}
           />
         ))}
       </div>

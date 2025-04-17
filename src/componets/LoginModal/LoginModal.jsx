@@ -1,6 +1,7 @@
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
 import { useState, useEffect } from "react";
 import "./LoginModal.css";
+import { color } from "framer-motion";
 
 const LoginModal = ({
   closeActiveModal,
@@ -40,6 +41,7 @@ const LoginModal = ({
       buttonText="Sign In"
       isOpen={isOpen}
       onClose={closeActiveModal}
+      className="signIn__btn"
       onSubmit={handleSubmit}
       error={error}
       name="login"
@@ -52,7 +54,7 @@ const LoginModal = ({
         
       />
       <label  className="modal__label">
-        Email*
+        Email
         <input
           type="email"
           className="modal__input"
@@ -68,7 +70,7 @@ const LoginModal = ({
         />
       </label>
       <label  className="modal__label">
-        Password*
+        Password
         <input
           type="password"
           className="modal__input"

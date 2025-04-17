@@ -1,5 +1,6 @@
 import "./Header.css";
 import logo from "../../assets/NewsExplorer-white.svg";
+import blackLogo from "../../assets/NewsExplorer.svg"
 import { Link,useLocation } from "react-router-dom";
 import CurrentUserContext from "../../context/CurrenteUserContext";
 import { useContext, useState } from "react";
@@ -17,8 +18,8 @@ function Header({ activeModal, isLoggedIn,handleLoginModal}) {
 
   return (
     <header className={`header ${isHome ? "header--transparent" : "header--white"}`}>
-      <Link to="/">
-        <img className="header__logo" src={logo} alt="header logo" />
+      <Link to="/" >
+        <img className="header__logo" src={isHome ? logo :blackLogo } alt="header logo" />
       </Link>
 
       {isLoggedIn ? (

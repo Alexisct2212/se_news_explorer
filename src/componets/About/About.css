@@ -1,12 +1,14 @@
 .About{
- max-width: 1400px;
+ max-width: 1440px;
  height: 624px;
  display: flex;
  align-items: center;
-
+ background-color: #fff;
  position: relative;
 }
 .about_me-avatar{
+    margin-left: 104px;
+    margin-right: 56px;
     height: 464px;
     width: 464px;
     border-radius: 1000px;
@@ -22,3 +24,27 @@
 .about__subtext,.about__subtext_2{
     max-width: 600px;
 }
+.about__subtext{
+    margin-bottom: 20px;
+}
+@media (width>1439px) {
+    .About{width: 100%;}
+  }
+  @media (width<=769px) {
+    .about_me-avatar{
+        height: 232px;
+        width: 232px;
+        margin-left: 40px;
+        margin-right: 32px;
+    }
+    .about__subtext,.about__subtext_2{
+        max-width: 424px;
+    }
+    .around__circle {
+        
+        height: 168px;
+        max-width: 424px;
+        top: 131px;
+        left: 302px;
+    }
+  }

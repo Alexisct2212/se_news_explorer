@@ -51,7 +51,7 @@ const RegisterModal = ({
         onClick={closeActiveModal}
       />
       <label  className="modal__label">
-        Email*
+        Email
         <input
           type="email"
           className="modal__input"
@@ -65,7 +65,7 @@ const RegisterModal = ({
         />
       </label>
       <label  className="modal__label">
-        Password*
+        Password
         <input
           type="password"
           className="modal__input"
@@ -79,7 +79,7 @@ const RegisterModal = ({
         />
       </label>
       <label  className="modal__label">
-        Name*
+        Username
         <input
           type="text"
           className="modal__input"
