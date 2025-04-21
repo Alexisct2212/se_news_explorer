@@ -1,10 +1,9 @@
 import "./NewsCard.css";
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
 import Preloader from "../Preloader/Preloader";
 import NewsApi from "../../utils/NewsApi";
 import SearchForm from "../searchForm/SearchForm";
-import NewsCardItem from "../NewsCardItem/NewsCarditem";
+import NewsCardItem from "../NewsCardItem/NewsCardItem";
 
 const API_KEY = "9311ed1a839b439e8feb735c8169a497";
 
@@ -63,7 +62,7 @@ const NewsCard = ({isLoggedIn}) => {
         <p className="NewsCard__search-p">Search results</p>
         {news.slice(0, visibleCount).map((article, index) => (
           <NewsCardItem
-          key={index}
+             key={index}
               article={article}
               isSaved={true}
               fromSavedPage={true}

@@ -1,17 +1,28 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useState,useMemo } from "react";
 import CurrentUserContext from "../../context/CurrenteUserContext";
 import "./SavedNews.css";
-import NewsCardItem from "../NewsCardItem/NewsCarditem";
-import { div } from "framer-motion/client";
+import NewsCardItem from "../NewsCardItem/NewsCardItem";
 
 function SavedNews({ isLoggedIn }) {
   const CurrentUser = useContext(CurrentUserContext);
   const [savedArticles, setSavedArticles] = useState([]);
 
   useEffect(() => {
-    const saved = JSON.parse(localStorage.getItem("savedArticles")) || [];
-    setSavedArticles(saved);
+    const saved = localStorage.getItem("savedArticles");
+    try {
+      const parsed = JSON.parse(saved);
+      if (Array.isArray(parsed)) {
+        setSavedArticles(parsed);
+      } else {
+        setSavedArticles([]); // fallback if not an array
+      }
+    } catch (error) {
+      console.error("Invalid savedArticles in localStorage:", error);
+      setSavedArticles([]); // fallback if JSON is invalid
+    }
   }, []);
+
+
   const handleDelete = (deletedArticle) => {
     const updated = savedArticles.filter((a) => a.url !== deletedArticle.url);
     setSavedArticles(updated);
@@ -19,28 +30,33 @@ function SavedNews({ isLoggedIn }) {
   };
 
   // 🔠 Extract keywords from saved articles
-  const extractKeywords = () => {
+  
+  const keywordList = useMemo(() => {
+    if (!Array.isArray(savedArticles)) return [];
+  
     const keywordCounts = {};
   
     savedArticles.forEach((article) => {
+      if (!article?.title) return; // 💡 skip if title is missing
       const titleWords = article.title
-        ?.toLowerCase()
+        .toLowerCase()
         .replace(/[^a-z0-9 ]/gi, "")
         .split(" ")
-        .filter((word) => word.length > 3); // ignore short/common words
+        .filter((word) => word.length > 3);
   
       titleWords.forEach((word) => {
         keywordCounts[word] = (keywordCounts[word] || 0) + 1;
       });
     });
   
-    const sortedKeywords = Object.entries(keywordCounts)
-      .sort((a, b) => b[1] - a[1]) // sort by frequency
-      .map((entry) => entry[0]); // get only the word
-  
-    return sortedKeywords.slice(0, 3); // return top 3
-  };
-  const keywordList = extractKeywords();
+    return Object.entries(keywordCounts)
+      .sort((a, b) => b[1] - a[1])
+      .map(([word]) => word)
+      .slice(0, 3);
+  }, [savedArticles]);
+
+
+  console.log("Saved articles:", savedArticles);
 
   return (
     <div className="Main__page-profile">

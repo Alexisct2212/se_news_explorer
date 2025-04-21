@@ -6,13 +6,18 @@ import CurrentUserContext from "../../context/CurrenteUserContext";
 import { useContext, useState } from "react";
 import logOutWhite from "../../assets/logout-white.png";
 import logOut from "../../assets/logout.png";
-function Header({ activeModal, isLoggedIn,handleLoginModal}) {
+import menu from "../../assets/menu.png"
+function Header({ activeModal, isLoggedIn,handleLoginModal,handleSignout}) {
   const CurrentUser = useContext(CurrentUserContext);
   const location =useLocation();
   const [activeButton, setActiveButton] = useState("");
+  const [menuOpen, setMenuOpen] = useState(false);
   const handleButtonClick = (button) => {
     setActiveButton(button);
     
+  };
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
   };
   const isHome = location.pathname === "/";
 
@@ -21,9 +26,12 @@ function Header({ activeModal, isLoggedIn,handleLoginModal}) {
       <Link to="/" >
         <img className="header__logo" src={isHome ? logo :blackLogo } alt="header logo" />
       </Link>
-
+      <button className="header__menu-toggle" onClick={toggleMenu}>
+        <span className="menu-icon" src={menu}></span>
+      </button>
+      <nav className={`header__user_info ${menuOpen ? "header__menu--open" : ""}`}>
       {isLoggedIn ? (
-        <div className="header__user_info">
+        <>
           <Link to="/">
           <button
             className={`home__page ${activeButton === "home" ? "selected" : ""}`}
@@ -42,16 +50,16 @@ function Header({ activeModal, isLoggedIn,handleLoginModal}) {
             <div className={`selected__button ${activeButton === "saved" ? "line_active" : ""}`}></div>
           </button>
           </Link>
-          <button className="user__logout-btn" onClick={handleButtonClick}>
-            <p className="header__username">user__name</p>
-            <img src={isHome ? logOutWhite : logOut} alt="logout btn" className="logout__header-img"/>
+          <button className="user__logout-btn" onClick={handleSignout}>
+            <p className="header__username">{CurrentUser.name}</p>
+            <img src={isHome ? logOutWhite : logOut} alt="logout btn" className="logout__header-img" />
           </button>
-        </div>
+        </>
       ) : (
-        <div className={`header__user_info ${activeModal === "login" && "modal_opened"}`}>
+        <>
           <button
             className={`home__page ${activeButton === "home" ? "selected" : ""}`}
-            onClick={() => handleButtonClick("home")}
+            onClick={() => {setMenuOpen(false);handleButtonClick("home")}}
           >
             Home
             <div className={`selected__button ${activeButton === "home" ? "line_active" : ""}`}></div>
@@ -60,16 +68,16 @@ function Header({ activeModal, isLoggedIn,handleLoginModal}) {
           <button
             className={`header__signup ${activeButton === "signin" ? "selected" : ""}`}
             type="button"
-            onClick={()=>handleLoginModal()}
+            onClick={()=>{setMenuOpen(false); handleLoginModal();}}
           >
             Sign in
             <div className={`selected__button ${activeButton === "signin" ? "line_active" : ""}`}></div>
             
           </button>
           
-        </div>
+        </>
       )}
-      
+      </nav>
     </header>
   );
 }

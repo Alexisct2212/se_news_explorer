@@ -46,7 +46,7 @@
 
 .news-card img {
   width: 100%;
-  height: auto;
+  height: 272px;
   object-fit: cover;
   border-radius: 6px;
   margin-bottom: 10px;
@@ -80,7 +80,7 @@
 }
 .news__save_btn{
   position: absolute;
-  top: 20px;
+  top: -270px;
   right: 20px;
   height: 24px;
   width: 24px;
@@ -93,8 +93,10 @@
 .news__save_btn:hover{
   background-image: url(../../assets/hover-bookmark.png);
 }
-.news__save_btn.saved{
+.news__save_btn:active{
   background-image: url(../../assets/saved__btn-marked.png);
+  width: 24px;
+  height: 24px;
 }
 
 .news__sourceName{
@@ -102,7 +104,7 @@
 }
 .news__delete-btn{
   position: absolute;
-  top: 20px;
+  top: -270px;
   right: 20px;
   height: 24px;
   width: 24px;

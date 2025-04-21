@@ -17,7 +17,7 @@ text-align: center;
 .Main__text{
     position: absolute;
     top:158px;
-    width: 608px;
+    max-width: 608px;
     height: 128px;
     font-size: 60px;
     margin: 0;

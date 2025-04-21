@@ -9,9 +9,11 @@ import RegisterModal from "../RegisterModal/RegisterModal"
 import SavedNews from "../SavedNews/SavedNews"
 import CurrentUserContext from "../../context/CurrenteUserContext"
 import {getUserProfile,logIn,registerUser,saveArticle,deleteArticle} from "../../utils/Auth";
+
 // imported 
 import { useEffect, useState } from "react";
 import { Routes, Route, useNavigate } from "react-router-dom";
+import SucessModal from "../SuccessModal/SucessModal"
 //
 function App(){
     const [activeModal, setActiveModal] = useState("");
@@ -30,10 +32,14 @@ function App(){
       const handleRegisterModal = () => {
         setActiveModal("signup");
       };
+      
+      const handleRegisteSuccessModal = () => {
+        setActiveModal("success");
+      };
       //use effects
       useEffect(() => {
         if (!activeModal) return;
-    
+        
         const handleEscClose = (e) => {
           if (e.key === "Escape") {
             closeActiveModal();
@@ -48,6 +54,37 @@ function App(){
       }, [activeModal]);
        
       //useEffect for userInformation and Articles
+      
+      const handleLogin = ({ email, password }) => {
+        logIn({ email, password })
+        .then((res) => {
+          console.log("Login response:", res);
+          if (!res.token) throw new Error("Token not received");
+          localStorage.setItem("jwt", res.token);
+          return getUserProfile(res.token);
+        })
+        .then((user) => {
+          setCurrentUser(user);
+          setIsLoggedIn(true);
+          navigate("/");
+          console.log(user);
+          closeActiveModal()
+        })
+        .catch((err) => console.error("Login error:", err));
+      };
+      const handleRegister = (user) => {
+        registerUser(user)
+        .then(() => handleLogin({ email: user.email, password: user.password}),handleRegisteSuccessModal)
+        .catch(console.error);
+      };
+      
+      const handleSignout = () => {
+        localStorage.removeItem("jwt");
+        setIsLoggedIn(false);
+        setCurrentUser(null);
+        navigate("/");
+      };
+
       useEffect(() => {
         const token = localStorage.getItem("jwt");
         if (token) {
@@ -63,35 +100,7 @@ function App(){
         }
       }, []);
 
-      const handleLogin = ({ email, password }) => {
-        logIn({ email, password })
-          .then((res) => {
-            if (!res.token) throw new Error("Token not received");
-            localStorage.setItem("jwt", res.token);
-            return getUserProfile(res.token);
-          })
-          .then((user) => {
-            setCurrentUser(user);
-            setIsLoggedIn(true);
-            navigate("/");
-            console.log(user);
-            closeActiveModal()
-          })
-          .catch((err) => console.error("Login error:", err));
-      };
-      const handleRegister = (user) => {
-        registerUser(user)
-          .then(() => handleLogin({ email: user.email, password: user.password,name:user.name }))
-          .catch(console.error);
-      };
-    
-      const handleSignout = () => {
-        localStorage.removeItem("jwt");
-        setIsLoggedIn(false);
-        setCurrentUser(null);
-        navigate("/");
-      };
-    return(
+      return(
     <div className="page">
       <CurrentUserContext.Provider value={currentUser}>
       <div className="page__content">
@@ -138,7 +147,13 @@ function App(){
             isOpen={activeModal === "signup"}
             onRegister={handleRegister}
           />
-      
+        <SucessModal
+        isOpen={activeModal=="success"}
+        handleRegisteSuccessModal={()=>handleRegisteSuccessModal("success")}
+        handleLoginModal={()=>handleLoginModal("login")}
+        closeActiveModal={closeActiveModal}
+        />    
+
       <Footer/>
       </div>
       </CurrentUserContext.Provider>

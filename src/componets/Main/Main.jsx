@@ -1,9 +1,7 @@
 import "./Main.css";
-import Header from "../Header/Header";
-import SearchForm from "../searchForm/SearchForm";
 import NewsCard from "../NewsCard/NewsCard";
 import About from "../About/About";
-function Main(isLoggedIn,activeModal,handleLoginModal,handleRegisterModal) {
+function Main(isLoggedIn) {
   
   return (
     <main className="Main">

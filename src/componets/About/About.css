@@ -39,6 +39,8 @@
     }
     .about__subtext,.about__subtext_2{
         max-width: 424px;
+        height: 100px;
+        overflow: scroll;
     }
     .around__circle {
         
