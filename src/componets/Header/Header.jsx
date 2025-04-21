@@ -7,6 +7,7 @@ import { useContext, useState } from "react";
 import logOutWhite from "../../assets/logout-white.png";
 import logOut from "../../assets/logout.png";
 import menu from "../../assets/menu.png"
+import blackmenu from "../../assets/menu-saved-news.png"
 function Header({ activeModal, isLoggedIn,handleLoginModal,handleSignout}) {
   const CurrentUser = useContext(CurrentUserContext);
   const location =useLocation();
@@ -24,10 +25,10 @@ function Header({ activeModal, isLoggedIn,handleLoginModal,handleSignout}) {
   return (
     <header className={`header ${isHome ? "header--transparent" : "header--white"}`}>
       <Link to="/" >
-        <img className="header__logo" src={isHome ? logo :blackLogo } alt="header logo" />
+        <img className="header__logo" src={isHome ? logo : blackLogo } alt="header logo" />
       </Link>
       <button className="header__menu-toggle" onClick={toggleMenu}>
-        <span className="menu-icon" src={menu}></span>
+        <span className={`${isHome ? "menu-icon": "black-menu-icon"}`} src={`${isHome ? menu: blackmenu}`}></span>
       </button>
       <nav className={`header__user_info ${menuOpen ? "header__menu--open" : ""}`}>
       {isLoggedIn ? (

@@ -48,3 +48,31 @@
     width: 160px;
     }
 }
+@media (width<426px ) {
+   .search__bar-container{
+    width: 100%;
+    top:-120px;
+    left:-20px;
+    margin: 0 16px 0 16px;
+    justify-content: space-around;
+   }
+   .search__input{
+    width: 228px;
+   }
+   .search__btn{
+    width: 228px;
+    top: 70px;
+    right: 95px;
+   }
+  }
+  
+  @media (width<376px ) {
+    .search__btn{
+        right: 70px;
+    }
+    }
+    @media (width<322px ) {
+        .search__btn{
+            right: 45px;
+        }
+        }

@@ -50,3 +50,19 @@
         left: 302px;
     }
   }
+  @media (width<426px ) {
+    .About{
+        flex-direction: column;
+    }
+    .about_me-avatar{
+        height: 272px;
+        width: 272px;
+        margin-top: 20px;
+    }
+    .around__circle {
+        height: 168px;
+        max-width: 424px;
+        top: 290px;
+        left: 16px;
+    }
+    }

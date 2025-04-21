@@ -3,7 +3,7 @@ import CurrentUserContext from "../../context/CurrenteUserContext";
 import "../NewsCard/NewsCard.css";
 import "./NewsCardItem.css";
 import { useLocation } from "react-router-dom";
-function NewsCardItem({ article, isSaved, onSave, onDelete, isLoggedIn }) {
+function NewsCardItem({ article, isSaved, onSave, onDelete, isLoggedIn,keyword }) {
   const currentUser = useContext(CurrentUserContext);
   const location = useLocation();
   const isHome = location.pathname === "/";
@@ -47,7 +47,7 @@ function NewsCardItem({ article, isSaved, onSave, onDelete, isLoggedIn }) {
 </div>
  
 {!isHome&& <div className="news-card__keyword-tooltip">
-    <span className="news-card__keyword-text"></span>
+    <span className="news-card__keyword-text">{keyword}</span>
   </div>}
 
       <p className="news__date">

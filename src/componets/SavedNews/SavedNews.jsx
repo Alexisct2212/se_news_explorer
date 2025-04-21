@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState,useMemo } from "react";
 import CurrentUserContext from "../../context/CurrenteUserContext";
 import "./SavedNews.css";
-import NewsCardItem from "../NewsCardItem/NewsCardItem";
+import NewsCardItem from "../NewsCardItem/NewsCarditem";
 
 function SavedNews({ isLoggedIn }) {
   const CurrentUser = useContext(CurrentUserContext);
@@ -55,15 +55,14 @@ function SavedNews({ isLoggedIn }) {
       .slice(0, 3);
   }, [savedArticles]);
 
-
-  console.log("Saved articles:", savedArticles);
+  
 
   return (
     <div className="Main__page-profile">
       <div className="saved__header">
         <h2 className="saved__header-text">Saved articles</h2>
         <p className="saved__header-subtext">
-          Alexis, you have {savedArticles.length} saved{" "}
+          {CurrentUser.name}, you have {savedArticles.length} saved{" "}
           {savedArticles.length === 1 ? "article" : "articles"}
         </p>
         {keywordList.length > 0 && (
@@ -76,22 +75,37 @@ function SavedNews({ isLoggedIn }) {
 
       <div className="news-cards-grid">
         {savedArticles.length > 0 ? (
-          savedArticles.map((article, index) => (
-            <NewsCardItem
-              key={index}
-              article={article}
-              isSaved={true}
-              onDelete={handleDelete}
-            />
-          ))
+          savedArticles.map((article, index) => {
+            // Extract one keyword from the title
+            let keyword = "";
+            if (article?.title) {
+              const titleWords = article.title
+                .toLowerCase()
+                .replace(/[^a-z0-9 ]/gi, "")
+                .split(" ")
+                .filter((word) => word.length > 3);
+              keyword = titleWords[0] || "";
+            }
+
+            return (
+              <NewsCardItem
+                key={index}
+                article={article}
+                isSaved={true}
+                onDelete={handleDelete}
+                keyword={keyword}
+              />
+            );
+          })
         ) : (
           <div className="no-saved-Articles">
-          <p className="no__saved-text">You haven't saved any articles yet.</p>
+            <p className="no__saved-text">You haven't saved any articles yet.</p>
           </div>
         )}
       </div>
     </div>
   );
 }
+
 
 export default SavedNews;

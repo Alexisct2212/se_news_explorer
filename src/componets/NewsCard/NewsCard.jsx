@@ -3,7 +3,7 @@ import { useState } from "react";
 import Preloader from "../Preloader/Preloader";
 import NewsApi from "../../utils/NewsApi";
 import SearchForm from "../searchForm/SearchForm";
-import NewsCardItem from "../NewsCardItem/NewsCardItem";
+import NewsCardItem from "../NewsCardItem/NewsCarditem";
 
 const API_KEY = "9311ed1a839b439e8feb735c8169a497";
 
