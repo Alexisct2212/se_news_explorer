@@ -32,9 +32,18 @@ function checkResponse(res) {
       },
     }).then(checkResponse);
   }
-  
-  function saveArticle(article, token) {
+  function getArticles() {
     return fetch(`${baseUrl}/articles`, {
+      method: "get",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(article),
+    }).then(checkResponse);
+  };
+
+  function saveArticle(article, token) {
+    return fetch(`${baseUrl}/articles/`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -60,4 +69,5 @@ function checkResponse(res) {
     getUserProfile,
     saveArticle,
     deleteArticle,
+    getArticles,baseUrl
   };

@@ -58,5 +58,20 @@ margin-top: 30px;
     max-width:100%;
     margin-left: auto;
     margin-right: auto;
+    padding: 14px;
+    }
+    
+    .saved__header {
+        width: 300px;
+        margin: 0 0 20px 16px;
+    }
+    .saved__header-subtext,.saved__header-keywords{
+      width: 288px;
+    }
+    .saved__header-text{
+      font-size: 12px;
+    }
+    .saved__header-subtext{
+      font-size: 30px;
     }
   }
