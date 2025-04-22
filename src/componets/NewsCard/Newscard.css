@@ -93,11 +93,11 @@
 .news__save_btn:hover{
   background-image: url(../../assets/hover-bookmark.png);
 }
-.news__save_btn:active{
+.news__save_btn--active{
   background-image: url(../../assets/saved__btn-marked.png);
-  width: 24px;
-  height: 24px;
+  background-position: center;
 }
+
 
 .news__sourceName{
   color: #555;

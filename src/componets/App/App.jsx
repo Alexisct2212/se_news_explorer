@@ -8,7 +8,7 @@ import LoginModal from "../LoginModal/LoginModal"
 import RegisterModal from "../RegisterModal/RegisterModal"
 import SavedNews from "../SavedNews/SavedNews"
 import CurrentUserContext from "../../context/CurrenteUserContext"
-import {getUserProfile,logIn,registerUser,saveArticle,deleteArticle} from "../../utils/Auth";
+import {getUserProfile,logIn,registerUser} from "../../utils/Auth";
 
 // imported 
 import { useEffect, useState } from "react";
@@ -74,7 +74,8 @@ function App(){
       };
       const handleRegister = (user) => {
         registerUser(user)
-        .then(() => handleLogin({ email: user.email, password: user.password}),handleRegisteSuccessModal)
+        .then(() => handleLogin({ email: user.email, password: user.password}),
+        handleRegisteSuccessModal(activeModal))
         .catch(console.error);
       };
       

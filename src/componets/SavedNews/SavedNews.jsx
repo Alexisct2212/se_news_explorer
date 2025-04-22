@@ -94,6 +94,7 @@ function SavedNews({ isLoggedIn }) {
                 isSaved={true}
                 onDelete={handleDelete}
                 keyword={keyword}
+                isLoggedIn={isLoggedIn}
               />
             );
           })

@@ -64,7 +64,7 @@ const NewsCard = ({isLoggedIn}) => {
           <NewsCardItem
              key={index}
               article={article}
-              isSaved={true}
+              isSaved={false}
               fromSavedPage={true}
               isLoggedIn={isLoggedIn}
           />

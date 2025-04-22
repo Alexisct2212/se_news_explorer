@@ -1,16 +1,15 @@
-import { baseUrl } from "./Auth";
+import { baseUrl,checkResponse } from "./Auth";
 function getArticles() {
     return fetch(`${baseUrl}/articles`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(article),
     }).then(checkResponse);
   };
 
-  function saveArticle(article, token) {
-    return fetch(`${baseUrl}/articles`, {
+  function saveArticle(articleId,token) {
+    return fetch(`${baseUrl}/articles/${articleId}`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

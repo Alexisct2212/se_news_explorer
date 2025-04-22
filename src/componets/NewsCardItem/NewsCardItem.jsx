@@ -8,20 +8,19 @@ function NewsCardItem({ article, isSaved, onSave, onDelete, isLoggedIn,keyword }
   const location = useLocation();
   const isHome = location.pathname === "/";
 
+  const saved = JSON.parse(localStorage.getItem("savedArticles")) || [];
+  const alreadySaved = saved.some((a) => a.url === article.url);
+
   const handleClick = () => {
-    const saved = JSON.parse(localStorage.getItem("savedArticles")) || [];
-    const alreadySaved = saved.some((a) => a.url === article.url);
-    if (isSaved && onDelete) {
+    if (isSaved || alreadySaved && onDelete) {
       onDelete(article);
     } else if (!alreadySaved) {
-      // Save logic
       const updated = [article, ...saved];
-      localStorage.setItem(
-        "savedArticles",
-        JSON.stringify([article, ...saved])
-      );
+      localStorage.setItem("savedArticles", JSON.stringify(updated));
+      if (onSave) onSave(article); // optional: if you want to update state too
     }
   };
+  
   
   return (
     <div className="news-card" width="350">
@@ -32,16 +31,20 @@ function NewsCardItem({ article, isSaved, onSave, onDelete, isLoggedIn,keyword }
         height="200"
       />
 <div className="news__tooltip-container">
-  <button
-    className={isHome ? "news__save_btn" : "news__delete-btn"}
-    onClick= {handleClick} 
-  />
+<button
+  className={
+    isHome
+      ? `news__save_btn ${alreadySaved ? "news__save_btn--active" : ""}`
+      : "news__delete-btn"
+  }
+  onClick={isLoggedIn?handleClick:undefined}
+/>
   
   {isLoggedIn && isHome && (
     <span className="news__tooltip-save">Login to save article</span>
   )}
 
-  {!isHome && (
+  {!isHome &&(
     <span className="news__tooltip-delete">Remove from saved</span>
   )}
 </div>
