@@ -3,7 +3,6 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://github.com/Alexisct2212/se_news_explorer/tree/stage-1-API/Front-end",
   "homepage":"https://alexisct2212.github.io/se_news_explorer/",
   "scripts": {
     "dev": "vite --open",
