@@ -37,7 +37,7 @@ function NewsCardItem({ article, isSaved, onSave, onDelete, isLoggedIn,keyword }
       ? `news__save_btn ${alreadySaved ? "news__save_btn--active" : ""}`
       : "news__delete-btn"
   }
-  onClick={isLoggedIn?handleClick:undefined}
+  onClick={ isLoggedIn==true ? handleClick:undefined}
 />
   
   {isLoggedIn && isHome && (

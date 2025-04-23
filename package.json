@@ -3,9 +3,9 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage":"https://alexisct2212.github.io/se_news_explorer/",
+  "homepage": "https://alexisct2212.github.io/se_news_explorer/",
   "scripts": {
-    "dev": "vite --open",
+    "dev": "vite ",
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
