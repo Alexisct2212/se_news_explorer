@@ -10,3 +10,20 @@
     background-color: transparent;
     border:none;
 }
+@media (width<426px) {
+    .modal__signup-button{
+      left:140px;
+    }
+}
+@media (width<376px) {
+    .modal__signup-button{
+      left:120px;
+    }
+}
+@media (width<321px) {
+    .modal__signup-button{
+      left:90px;
+    }
+   
+  }
+  

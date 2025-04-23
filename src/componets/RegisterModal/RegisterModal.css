@@ -10,3 +10,18 @@
     background-color: transparent;
     border:none;
 }
+@media (width<426px) {
+    .modal__login-button{
+      left:130px;
+    }
+}
+@media (width<376px) {
+    .modal__login-button{
+      left:100px;
+    }
+}
+@media (width<321px) {
+    .modal__login-button{
+      left:90px;
+    }
+}
