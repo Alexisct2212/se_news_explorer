@@ -5,7 +5,7 @@ import './index.css'
 import App from './componets/App/App'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <BrowserRouter>
+  <BrowserRouter basename='/se_news_explorer'>
   <React.StrictMode>
     <App />
   </React.StrictMode>
