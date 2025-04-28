@@ -15,15 +15,19 @@ align-items: center;
 text-align: center;
 }
 .Main__text{
-    position: absolute;
+    font-family: "Roboto Slab";
+    font-weight: 400;
+    font-style: normal;
     top:158px;
     max-width: 608px;
     height: 128px;
     font-size: 60px;
-    margin: 0;
+    margin: 0 0 32px 0;
 }
 .Main__subtext {
-    position: absolute;
+    font-family: "Roboto";
+    font-weight: 400;
+    font-style: normal;
     top:310px;
     font-size: 18px;
     color: white;
@@ -33,6 +37,7 @@ text-align: center;
   @media (width<426px ) {
     .Main__text{
         font-size: 36px;
+        margin: 0;
     }
     .Main__subtext{
         width: 100%;

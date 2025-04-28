@@ -13,9 +13,14 @@
 }
 .saved__header-text{
     color: #1A1B2280;
-
+    font-family: "Roboto";
+    font-weight: 400;
+    font-style: normal;
 }
 .saved__header-subtext{
+  font-family: "Roboto Slab";
+  font-weight: 400;
+  font-style: normal;
   width: 336px;
   height: 68px;
   color: #1A1B22;
@@ -34,6 +39,8 @@ margin-top: 30px;
 }
 .no__saved-text{
   font-size: 30px;
+  position: absolute;
+  top: 500px;
 }
 .news-cards-grid {
    max-width: 100%;
@@ -51,6 +58,7 @@ margin-top: 30px;
   @media (width<768px ) {
     .news-cards-grid{grid-template-columns: repeat(auto-fill, minmax(224px, 1fr));
     max-width:100%;
+    padding: 0;
     }
   }
   @media (width<536px ) {

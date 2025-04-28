@@ -100,7 +100,7 @@ function SavedNews({ isLoggedIn }) {
           })
         ) : (
           <div className="no-saved-Articles">
-            <p className="no__saved-text">You haven't saved any articles yet.</p>
+            <p className="no__saved-text">You haven't saved any article,go to home page to save any article</p>
           </div>
         )}
       </div>

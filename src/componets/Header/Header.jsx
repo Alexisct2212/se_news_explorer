@@ -30,7 +30,7 @@ function Header({ activeModal, isLoggedIn,handleLoginModal,handleSignout}) {
       <button className="header__menu-toggle" onClick={toggleMenu}>
         <span className={`${isHome ? "menu-icon": "black-menu-icon"}`} src={`${isHome ? menu: blackmenu}`}></span>
       </button>
-      <nav className={`header__user_info ${menuOpen ? "header__menu--open" : ""}`}>
+      <nav className={`header__nav_info ${menuOpen ? "header__menu--open" : ""}`}>
       {isLoggedIn ? (
         <>
           <Link to="/">

@@ -59,7 +59,7 @@ const NewsCard = ({isLoggedIn}) => {
     {/* ✅ Display News Cards */}
     {!loading && !error && news.length > 0 && (
       <div className="news-list">
-        <p className="NewsCard__search-p">Search results</p>
+        <p className="NewsCard__search-text">Search results</p>
         {news.slice(0, visibleCount).map((article, index) => (
           <NewsCardItem
              key={index}

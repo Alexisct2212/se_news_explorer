@@ -15,7 +15,7 @@
     
 }
 .around__circle{
-   position: absolute;
+    position: absolute;
    height: 170px;
    max-width: 600px;
    top:131px;
@@ -23,9 +23,19 @@
 }
 .about__subtext,.about__subtext_2{
     max-width: 600px;
+    font-family: "Roboto";
+    font-weight: 400;
+    font-display: swap;
+    font-style: normal;
 }
 .about__subtext{
     margin-bottom: 20px;
+}
+.About__title{
+    font-family: "Roboto Slab";
+    font-weight: 400;
+    font-display: swap;
+    font-style: normal;
 }
 @media (width>1439px) {
     .About{width: 100%;}
@@ -64,5 +74,8 @@
         max-width: 424px;
         top: 290px;
         left: 16px;
+    }
+    .about__subtext{
+    height: fit-content;
     }
     }

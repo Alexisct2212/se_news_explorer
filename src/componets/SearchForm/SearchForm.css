@@ -52,27 +52,26 @@
    .search__bar-container{
     width: 100%;
     top:-120px;
-    left:-20px;
     margin: 0 16px 0 16px;
     justify-content: space-around;
    }
    .search__input{
-    width: 228px;
+    width: 288px;
    }
    .search__btn{
-    width: 228px;
+    width: 288px;
     top: 70px;
-    right: 95px;
+    right: 65px;
    }
   }
   
   @media (width<376px ) {
     .search__btn{
-        right: 70px;
+        right: 45px;
     }
     }
     @media (width<322px ) {
         .search__btn{
-            right: 45px;
+            right: 15px;
         }
         }

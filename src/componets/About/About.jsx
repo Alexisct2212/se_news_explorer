@@ -2,14 +2,12 @@ import "./About.css";
 import avatar from "../../assets/about_me_avatar.avif"
 function About() {
   return (
-    <div className="About">
-      <img className="about_me-avatar" src={avatar}/>
+    <footer className="About">
+      <img className="about_me-avatar" src={avatar} alt="this img shows a animated picture of someone that looks a like to me "/>
       <div className="around__circle">
-      <h1 className="About_main-text">About the Author</h1>
+      <h2 className="About__title">About the Author</h2>
       <p className="about__subtext">My name is Alexis, I'm 22 years old. I've always been passionate about technology, 
-        and I decided to become a software engineer. I started studying at school, but they didn't teach me anything. 
-        I didn't have any interesting classes, so I decided to drop out, but I was always interested in programming. After a year, 
-        I decided to enroll in a program to learn and start a career. That's when I decided to enroll in Tripleten, and now I'm almost finished. 
+        and I decided to become a software engineer.I decided to enroll in a program to learn and start a career. 
         I'm very happy to become a software engineer and start a career where I feel very confident in my abilities.
 
       </p>
@@ -19,7 +17,7 @@ function About() {
         for fun I like to play Videogames,go to the Gym and Drive
       </p>
       </div>
-    </div>
+    </footer>
   );
 }
 

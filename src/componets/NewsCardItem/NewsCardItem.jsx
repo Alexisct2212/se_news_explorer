@@ -23,8 +23,10 @@ function NewsCardItem({ article, isSaved, onSave, onDelete, isLoggedIn,keyword }
   
   
   return (
+    <a href={article.url} target="_blank" rel="noopener noreferrer">
     <div className="news-card" width="350">
       <img
+        loading="lazy"
         src={article.urlToImage}
         alt={article.title}
         width="300"
@@ -66,10 +68,8 @@ function NewsCardItem({ article, isSaved, onSave, onDelete, isLoggedIn,keyword }
       <h3 className="news__sourceName">
         {article.source?.id || article.source?.name || "unknown Source"}
       </h3>
-      <a href={article.url} target="_blank" rel="noopener noreferrer">
-        Read more
-      </a>
     </div>
+   </a>
   );
 }
 
