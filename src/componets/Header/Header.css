@@ -20,7 +20,7 @@
   align-items: center;
   margin: 0 108px 0 0;
 }
-.saved__articles{
+.saved__articles-btn{
   margin-left: 66px;
   width: 120px;
   height: 24px;
@@ -39,7 +39,7 @@
   border:1px solid #D1D2D6;
   border-radius: 40px;
 }
-.header__username {
+.header__username-title {
   background: transparent;
   border-radius: 50px;
   width: 100px;
@@ -70,7 +70,7 @@
   width: 40px;
 }
 
-.home__page {
+.header__home-page {
   border: none;
   color: white;
   background-color: transparent;
@@ -117,10 +117,10 @@
   border-bottom: 1px solid #e0e0e0;
 }
 
-.header--white .home__page,
-.header--white .saved__articles,
+.header--white .header__home-page,
+.header--white .saved__articles-btn,
 .header--white .header__signup,
-.header--white .header__username {
+.header--white .header__username-title {
   color: black;
   border-color: black;
 }
@@ -189,7 +189,7 @@
   a{
     max-width: 200px;
   }
-  .saved__articles{
+  .saved__articles-btn{
     margin-left: 16px;
   }
   .user__logout-btn{
@@ -255,7 +255,7 @@
   right: -60px;
   top:30px
 }
-.user__logout-btn,.saved__articles{
+.user__logout-btn,.saved__articles-btn{
   left: 50px;
   position: relative;
   margin:5px 0 5px 0;
@@ -266,11 +266,11 @@
   justify-content:space-around;
   
 }
-.home__page{
+.header__home-page{
   left: 50px;
   margin-top: 50px;
 }
-.saved__articles{
+.saved__articles-btn{
   margin: 20px 0 20px 0;
 }
 

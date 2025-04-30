@@ -1,3 +1,5 @@
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import 'react-lazy-load-image-component/src/effects/blur.css';
 import { useContext } from "react";
 import CurrentUserContext from "../../context/CurrenteUserContext";
 import "../NewsCard/NewsCard.css";
@@ -23,9 +25,9 @@ function NewsCardItem({ article, isSaved, onSave, onDelete, isLoggedIn,keyword }
   
   
   return (
-    <a href={article.url} target="_blank" rel="noopener noreferrer">
+    <a href={article.url} target="_blank" rel="noopener noreferrer" className="newscard_anchor-url">
     <div className="news-card" width="350">
-      <img
+      <LazyLoadImage
         loading="lazy"
         src={article.urlToImage}
         alt={article.title}
@@ -55,7 +57,7 @@ function NewsCardItem({ article, isSaved, onSave, onDelete, isLoggedIn,keyword }
     <span className="news-card__keyword-text">{keyword}</span>
   </div>}
 
-      <p className="news__date">
+      <p className="news_card-date">
         {" "}
         {new Date(article.publishedAt).toLocaleDateString("en-US", {
           year: "numeric",
@@ -65,7 +67,7 @@ function NewsCardItem({ article, isSaved, onSave, onDelete, isLoggedIn,keyword }
       </p>
       <h2>{article.title}</h2>
       <p>{article.description}</p>
-      <h3 className="news__sourceName">
+      <h3 className="news__sourceName-title">
         {article.source?.id || article.source?.name || "unknown Source"}
       </h3>
     </div>

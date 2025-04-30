@@ -75,6 +75,7 @@
   margin-bottom: 10px;
   font-family: "Roboto";
   font-weight: 400;
+  max-height: 73px;
 }
 
 .news-card a {
@@ -83,7 +84,7 @@
   color: #1e90ff;
   font-weight: bold;
 }
-.Showmore__btn{
+.news__Showmore-btn{
   background-color: white;
   height: 64px;
   width: 288px;
@@ -91,7 +92,7 @@
   margin: 64px auto 80px;
   border:none;
 }
-.Showmore__btn:hover{
+.news__Showmore-btn:hover{
   background-color: #e8e8e8;
 }
 .news__save_btn{
@@ -115,7 +116,7 @@
 }
 
 
-.news__sourceName{
+.news__sourceName-title{
   color: #555;
 }
 .news__delete-btn{

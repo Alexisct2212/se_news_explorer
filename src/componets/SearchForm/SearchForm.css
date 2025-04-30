@@ -1,18 +1,18 @@
-.search__bar-container{
+.searchBar__container{
     display: flex;
     position: relative;
     top:-140px;
     left: 70px;
     width: 776px;
 }
-.search__input{
+.searchBar__container-input{
     text-indent: 25px;
     height: 64px;
     width: 608px;
     border-radius: 75px;
     border: none;
 }
-.search__btn{
+.searchbar__container-btn{
     background-color:#2F71E5;
     color: white;
     border:none;
@@ -24,24 +24,24 @@
     border-radius: 75px;
     cursor: pointer;
 }
-.search__btn:hover{
+.searchbar__container-btn:hover{
     background-color: #347EFF;
     
 }
-.search__btn:active{
+.searchbar__container-btn:active{
     background-color:#2A65CC;
 }
 @media (width<=769px) {
-    .search__bar-container{
+    .searchBar__container{
         top:-140px;
         left: 0px;
         max-width: 448px;
     }
-    .search__input{
+    .searchBar__container-input{
        max-width: 448px;
        height: 56px;
     }
-    .search__btn{
+    .searchbar__container-btn{
     right:-1px;
     top: 0px;
     height: 60px;
@@ -49,16 +49,16 @@
     }
 }
 @media (width<426px ) {
-   .search__bar-container{
+   .searchBar__container{
     width: 100%;
     top:-120px;
     margin: 0 16px 0 16px;
     justify-content: space-around;
    }
-   .search__input{
+   .searchBar__container-input{
     width: 288px;
    }
-   .search__btn{
+   .searchbar__container-btn{
     width: 288px;
     top: 70px;
     right: 65px;
@@ -66,12 +66,12 @@
   }
   
   @media (width<376px ) {
-    .search__btn{
+    .searchbar__container-btn{
         right: 45px;
     }
     }
     @media (width<322px ) {
-        .search__btn{
+        .searchbar__container-btn{
             right: 15px;
         }
         }

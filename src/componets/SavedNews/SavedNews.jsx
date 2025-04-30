@@ -58,7 +58,7 @@ function SavedNews({ isLoggedIn }) {
   
 
   return (
-    <div className="Main__page-profile">
+    <section className="Main__page-profile">
       <div className="saved__header">
         <h2 className="saved__header-text">Saved articles</h2>
         <p className="saved__header-subtext">
@@ -73,7 +73,7 @@ function SavedNews({ isLoggedIn }) {
         )}
       </div>
 
-      <div className="news-cards-grid">
+      <section className="news-cards-grid">
         {savedArticles.length > 0 ? (
           savedArticles.map((article, index) => {
             // Extract one keyword from the title
@@ -103,8 +103,8 @@ function SavedNews({ isLoggedIn }) {
             <p className="no__saved-text">You haven't saved any article,go to home page to save any article</p>
           </div>
         )}
-      </div>
-    </div>
+      </section>
+    </section>
   );
 }
 

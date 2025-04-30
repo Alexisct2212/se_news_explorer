@@ -35,7 +35,7 @@ function Header({ activeModal, isLoggedIn,handleLoginModal,handleSignout}) {
         <>
           <Link to="/">
           <button
-            className={`home__page ${activeButton === "home" ? "selected" : ""}`}
+            className={`header__home-page ${activeButton === "home" ? "selected" : ""}`}
             onClick={() => handleButtonClick("home")}
           >
             Home
@@ -44,7 +44,7 @@ function Header({ activeModal, isLoggedIn,handleLoginModal,handleSignout}) {
           </Link>
           <Link to="/saved-news">
           <button
-            className={`saved__articles ${activeButton === "saved" ? "selected" : ""}`}
+            className={`saved__articles-btn ${activeButton === "saved" ? "selected" : ""}`}
             onClick={() => handleButtonClick("saved")}
           >
             Saved articles
@@ -52,14 +52,14 @@ function Header({ activeModal, isLoggedIn,handleLoginModal,handleSignout}) {
           </button>
           </Link>
           <button className="user__logout-btn" onClick={handleSignout}>
-            <p className="header__username">{CurrentUser.name}</p>
+            <p className="header__username-title">{CurrentUser.name}</p>
             <img src={isHome ? logOutWhite : logOut} alt="logout btn" className="logout__header-img" />
           </button>
         </>
       ) : (
         <>
           <button
-            className={`home__page ${activeButton === "home" ? "selected" : ""}`}
+            className={`header__home-page ${activeButton === "home" ? "selected" : ""}`}
             onClick={() => {setMenuOpen(false);handleButtonClick("home")}}
           >
             Home
