@@ -13,6 +13,8 @@
   width: 200px;
   height: 24px;
   margin: 30px auto 26px 104px;
+  font-family: "Roboto";
+  font-weight: 700;
 }
 
 .header__nav_info {
@@ -27,6 +29,8 @@
   background-color: transparent;
   border: none;
   color:#B6BCBF;
+  font-family: "Roboto";
+  font-weight: 500;
 }
 
 .user__logout-btn{
@@ -43,7 +47,9 @@
   background: transparent;
   border-radius: 50px;
   width: 100px;
-  color:white
+  color:white;
+  font-family: "Roboto";
+  font-weight: 500;
 }
 .logout_header-img{
   width: 24px;
@@ -63,6 +69,8 @@
   border: 1px solid #ffffff;
   margin: 0px 0px 0px 42px;
   cursor: pointer;
+  font-family: "Roboto";
+   font-weight: 500;
 }
 
 .header__user_avatar {
@@ -76,6 +84,8 @@
   background-color: transparent;
   cursor: pointer;
   position: relative;
+  font-family: "Roboto";
+    font-weight: 500;
 }
 
 .selected {
@@ -165,6 +175,9 @@
   gap: 0px;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
 }
+.header__link-home{
+  width: 0;
+}
 @media (width<=1439px) {
   .header{width: 100%;}
 }
@@ -186,9 +199,7 @@
     
     margin:0;
   }
-  a{
-    max-width: 200px;
-  }
+ 
   .saved__articles-btn{
     margin-left: 16px;
   }
@@ -264,6 +275,7 @@
 .user__logout-btn{
   width: 288px;
   justify-content:space-around;
+  left: 20px;
   
 }
 .header__home-page{
@@ -273,7 +285,10 @@
 .saved__articles-btn{
   margin: 20px 0 20px 0;
 }
-
+.selected__button.line_active {
+  top:10px;
+  
+}
 
 }
 @media (width<376px){

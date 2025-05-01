@@ -11,18 +11,22 @@
     width: 608px;
     border-radius: 75px;
     border: none;
+    font-family: "Roboto";
+    font-weight: 500;
 }
 .searchbar__container-btn{
+    position: absolute;
     background-color:#2F71E5;
     color: white;
     border:none;
-    position: absolute;
     right:163px;
     top: -1px;
     height: 70px;
     width: 168px;
     border-radius: 75px;
     cursor: pointer;
+    font-family: "Roboto";
+    font-weight: 400;
 }
 .searchbar__container-btn:hover{
     background-color: #347EFF;

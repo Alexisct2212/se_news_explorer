@@ -24,7 +24,7 @@ function Header({ activeModal, isLoggedIn,handleLoginModal,handleSignout}) {
 
   return (
     <header className={`header ${isHome ? "header--transparent" : "header--white"}`}>
-      <Link to="/" >
+      <Link to="/" className="header__link-home">
         <img className="header__logo" src={isHome ? logo : blackLogo } alt="header logo" />
       </Link>
       <button className="header__menu-toggle" onClick={toggleMenu}>

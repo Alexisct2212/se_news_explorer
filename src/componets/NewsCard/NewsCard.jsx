@@ -46,7 +46,7 @@ const NewsCard = ({isLoggedIn}) => {
   );
 
   return (
-    <div className="news-container">
+    <section className="news-container">
     {/* 🔍 Search Bar */}
     <SearchForm setSearchTerm={setSearchTerm} onSearch={fetchNews} />
 
@@ -59,7 +59,7 @@ const NewsCard = ({isLoggedIn}) => {
     {/* ✅ Display News Cards */}
     {!loading && !error && news.length > 0 && (
       <section className="news-list">
-        <p className="NewsCard__search-text">Search results</p>
+        <h1 className="NewsCard__search-text">Search results</h1>
         {news.slice(0, visibleCount).map((article, index) => (
           <NewsCardItem
              key={index}
@@ -76,7 +76,7 @@ const NewsCard = ({isLoggedIn}) => {
     {visibleCount < news.length && (
       <button onClick={() => setVisibleCount(visibleCount + 3)} className="news__Showmore-btn">Show More</button>
     )}
-  </div>
+  </section>
   );
 };
 

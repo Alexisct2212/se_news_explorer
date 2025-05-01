@@ -45,7 +45,7 @@ margin-top: 30px;
 .news-cards-grid {
    max-width: 100%;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); /* 3 cards per row */
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr)); /* 3 cards per row */
     gap: 20px;
     padding: 20px;
     justify-items: center;
@@ -55,10 +55,11 @@ margin-top: 30px;
   p{
     margin:0px
   }
-  @media (width<768px ) {
+  @media (width<769px ) {
     .news-cards-grid{grid-template-columns: repeat(auto-fill, minmax(224px, 1fr));
     max-width:100%;
-    padding: 0;
+    gap: 8px;
+    padding: 20px 0 20px 0;
     }
   }
   @media (width<536px ) {

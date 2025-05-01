@@ -7,6 +7,7 @@
     height: 976px;
     height: auto;
     margin: 50px auto 0px;
+    
   }
   
   .NewsCard__search-text{
@@ -40,7 +41,7 @@
   padding: 15px;
   transition: transform 0.2s ease-in-out;
   position: relative;
-  
+  height: 546px;
 }
 
 .news-card:hover {
@@ -67,6 +68,7 @@
   line-height: 30px;
   letter-spacing: 0;
   margin: 0 0 16px 0;
+  color: #000;
 }
 
 .news-card p {
@@ -76,6 +78,7 @@
   font-family: "Roboto";
   font-weight: 400;
   max-height: 73px;
+  overflow: hidden;
 }
 
 .news-card a {
@@ -117,7 +120,17 @@
 
 
 .news__sourceName-title{
-  color: #555;
+  color: #B6BCBF;
+  font-family: "Roboto Slab";
+  font-weight: 700;
+  font-size: 16px;
+  letter-spacing: 0.6px;
+}
+.news_card-date{
+  color: #B6BCBF;
+  font-family: "Source Sans Pro";
+  font-weight: 400;
+  font-size: 18px;
 }
 .news__delete-btn{
   position: absolute;
@@ -134,12 +147,75 @@
 .news__delete-btn:hover{
   background-image: url(../../assets/trash.png);
 }
+.newscard_anchor-url{
+  color: #000;
+}
+
 @media (width<770px) {
   .news-list{grid-template-columns: repeat(auto-fill, minmax(224px, 1fr));}
+  .news-card {height: unset;}
+  .news-card p{
+    overflow: hidden;
+  }
+  .news-card h2{
+    line-height: unset;
+    font-size: 19px;
+  }
+  .news__save_btn{
+    top: -270px;
+    right: 10px;
+  }
+  .news__delete-btn{
+    top: -260px;
+    right: 15px;
+  }
+  .news__tooltip-save{
+    left: 300px;
+  }
+}
+@media (width<456px) {
+  
+  .news-card p {
+    max-height: unset;
+  }
+  .news__save_btn{
+    top: -255px;
+    right: 10px;
+  }
+  .news__delete-btn{
+    top: -250px;
+    right: 15px;
+    
+  }
+}
+@media (width<426px) {
+  .NewsCard__search-p{
+    font-size: 30px;
+    left:30px;
+  }
+  .news__save_btn{
+    top: -265px;
+    right: 10px;
+  }
+  .news__delete-btn{
+    top: -260px;
+    right: 15px;
+  }
 }
 @media (width<321px) {
   .NewsCard__search-p{
     font-size: 30px;
     left:30px;
+  }
+  .news__save_btn{
+    top: -270px;
+    right: 10px;
+  }
+  .news__delete-btn{
+    
+    top: -260px;
+    right: 15px;
+    
+    
   }
 }

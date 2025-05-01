@@ -9,6 +9,8 @@
     margin-left: 8px;
     background-color: transparent;
     border:none;
+    font-family:"Inter";
+    font-weight: 500;
 }
 @media (width<426px) {
     .modal__signup-button{

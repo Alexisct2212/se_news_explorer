@@ -2,25 +2,33 @@ import { useContext, useEffect, useState,useMemo } from "react";
 import CurrentUserContext from "../../context/CurrenteUserContext";
 import "./SavedNews.css";
 import NewsCardItem from "../NewsCardItem/NewsCarditem";
+import { useNavigate } from "react-router-dom";
 
 function SavedNews({ isLoggedIn }) {
   const CurrentUser = useContext(CurrentUserContext);
   const [savedArticles, setSavedArticles] = useState([]);
-
+  const navigate = useNavigate();
   useEffect(() => {
     const saved = localStorage.getItem("savedArticles");
     try {
       const parsed = JSON.parse(saved);
       if (Array.isArray(parsed)) {
-        setSavedArticles(parsed);
+        if (parsed.length === 0) {
+          navigate("/"); // redirect if array is empty
+        } else {
+          setSavedArticles(parsed);
+        }
       } else {
-        setSavedArticles([]); // fallback if not an array
+        setSavedArticles([]);
+        navigate("/"); // fallback if not an array
       }
     } catch (error) {
       console.error("Invalid savedArticles in localStorage:", error);
-      setSavedArticles([]); // fallback if JSON is invalid
+      setSavedArticles([]);
+      navigate("/"); // fallback if JSON is invalid
     }
-  }, []);
+  }, [navigate]);
+  
 
 
   const handleDelete = (deletedArticle) => {

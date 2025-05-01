@@ -25,7 +25,7 @@ function NewsCardItem({ article, isSaved, onSave, onDelete, isLoggedIn,keyword }
   
   
   return (
-    <a href={article.url} target="_blank" rel="noopener noreferrer" className="newscard_anchor-url">
+    
     <div className="news-card" width="350">
       <LazyLoadImage
         loading="lazy"
@@ -44,7 +44,7 @@ function NewsCardItem({ article, isSaved, onSave, onDelete, isLoggedIn,keyword }
   onClick={ isLoggedIn ? handleClick:undefined}
 />
   
-  {isLoggedIn && isHome && (
+  {!isLoggedIn && isHome && (
     <span className="news__tooltip-save">Login to save article</span>
   )}
 
@@ -52,26 +52,26 @@ function NewsCardItem({ article, isSaved, onSave, onDelete, isLoggedIn,keyword }
     <span className="news__tooltip-delete">Remove from saved</span>
   )}
 </div>
- 
 {!isHome&& <div className="news-card__keyword-tooltip">
     <span className="news-card__keyword-text">{keyword}</span>
   </div>}
-
-      <p className="news_card-date">
+     <a href={article.url} target="_blank" rel="noopener noreferrer" className="newscard_anchor-url">
+      <h1 className="news_card-date">
         {" "}
         {new Date(article.publishedAt).toLocaleDateString("en-US", {
           year: "numeric",
           month: "long",
           day: "numeric",
         })}
-      </p>
+      </h1>
       <h2>{article.title}</h2>
       <p>{article.description}</p>
       <h3 className="news__sourceName-title">
         {article.source?.id || article.source?.name || "unknown Source"}
       </h3>
+      </a>
     </div>
-   </a>
+   
   );
 }
 

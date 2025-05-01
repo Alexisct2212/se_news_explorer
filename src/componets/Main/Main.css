@@ -43,3 +43,8 @@ text-align: center;
         width: 100%;
     }
   }
+  @media (width<321px ) {
+   .Main__subtext{
+    width: 280px;
+   }
+  }

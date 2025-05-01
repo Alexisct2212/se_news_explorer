@@ -13,7 +13,7 @@ function Footer() {
       </div>
       <div className="footer__right-side">
       <Link to="/"><p className="home__btn">Home</p></Link>
-      <a href="https://tripleten.com" ><p className="Tripleten__url">Tripleten</p></a>
+      <a href="https://tripleten.com" target="_blank"><p className="Tripleten__url">Tripleten</p></a>
       <SocialIcon
   url="https://github.com/alexisct2212"
   target="_blank"

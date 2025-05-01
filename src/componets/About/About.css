@@ -56,7 +56,7 @@
         
         height: 168px;
         max-width: 424px;
-        top: 131px;
+        top: 165px;
         left: 302px;
     }
   }
@@ -73,9 +73,14 @@
         height: 168px;
         max-width: 424px;
         top: 290px;
-        left: 16px;
+        left: 26px;
     }
     .about__subtext{
     height: fit-content;
     }
+    }
+    @media (width<321px ) {
+        .about__subtext{
+            width: 280px;
+        }
     }
