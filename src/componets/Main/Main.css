@@ -1,4 +1,4 @@
-main{
+.Main{
     background-image: url("../../assets/Main/header_img.png");
     background-repeat: no-repeat;
 }
@@ -35,16 +35,31 @@ text-align: center;
     max-width: 600px; /* Optional: Limit the width of the text */
   }
   @media (width<426px ) {
+    .Main{
+        background-size: auto;
+        background-position: top;
+       }
     .Main__text{
+        position: relative;
+        top: -70px;
         font-size: 36px;
         margin: 0;
+        width: 288px;
     }
     .Main__subtext{
-        width: 100%;
+        position: relative;
+        top: -70px;
+        width: 288px;
+
     }
   }
   @media (width<321px ) {
    .Main__subtext{
-    width: 280px;
+    position: relative;
+    top: -110px;
+   }
+   .Main__text{
+    position: relative;
+    top: -90px;
    }
   }

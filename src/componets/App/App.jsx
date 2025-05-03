@@ -105,12 +105,6 @@ function App(){
     <div className="page">
       <CurrentUserContext.Provider value={currentUser}>
       <div className="page__content">
-      <Header 
-      isLoggedIn={isLoggedIn}
-      activeModal={activeModal}
-      handleLoginModal={handleLoginModal}
-      handleRegisterModal={handleRegisterModal}
-      handleSignout={handleSignout}/>
       <Routes>
         <Route
         path="/"
@@ -118,6 +112,10 @@ function App(){
           <Main
           isLoggedIn={isLoggedIn}
           foundNews={foundNews}
+          activeModal={activeModal}
+          handleLoginModal={handleLoginModal}
+          handleRegisterModal={handleRegisterModal}
+          handleSignout={handleSignout}
           />
           
         }
@@ -128,6 +126,7 @@ function App(){
           <ProtectedRoute isLoggedIn={isLoggedIn}>
             <SavedNews 
             isLoggedIn={isLoggedIn}
+            handleSignout={handleSignout}
             />
           </ProtectedRoute>
         }

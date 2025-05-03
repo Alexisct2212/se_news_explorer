@@ -5,7 +5,7 @@
   "type": "module",
   "homepage": "https://alexisct2212.github.io/se_news_explorer/",
   "scripts": {
-    "dev": "vite ",
+    "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",

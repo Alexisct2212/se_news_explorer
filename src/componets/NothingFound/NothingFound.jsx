@@ -1,14 +1,12 @@
 import "../Preloader/Preloader.css"
+import ErrorImg from "../../assets/not-found_v1.svg"
 function NothingFound(){
   return(
     <div className="Preloader">
         <div className="Preloader_Error">
-          <div className="face">
-            <div className="eye left-eye"></div>
-            <div className="eye right-eye"></div>
-            <div className="mouth"></div>
-            <div className="stick"></div>
-          </div>
+         
+          <img src={ErrorImg} alt="Error img" className="Preloader__Error-img" />
+          
           <div className="text">
             <p className="Preloader__Main-text">Nothing Found</p>
             <p className="preloader__subtext">Sorry, but nothing matched,

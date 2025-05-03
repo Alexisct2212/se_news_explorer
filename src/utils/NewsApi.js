@@ -25,7 +25,6 @@ const newsApiBaseUrl = process.env.NODE_ENV === "production"
         return hasImage && (title.includes(keyword) || description.includes(keyword));
       });
   
-      console.log("Filtered articles:", filtered);
       return filtered;
     } catch (error) {
       console.error("Error fetching news:", error.message);

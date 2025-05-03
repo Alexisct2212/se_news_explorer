@@ -1,8 +1,7 @@
 .Main__page-profile{
-
   display: flex ;
   justify-items: center;
-  margin: 80px auto 0;
+  margin: 0 auto 0;
   background-color: #fff;
   align-items: flex-start;
   flex-direction: column;
@@ -43,28 +42,28 @@ margin-top: 30px;
   top: 500px;
 }
 .news-cards-grid {
-   max-width: 100%;
+    max-width: 90%;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(400px, 1fr)); /* 3 cards per row */
     gap: 20px;
     padding: 20px;
     justify-items: center;
     background-color: #F5F6F7;
-  
+    margin: 0 auto;
   }
   p{
     margin:0px
   }
   @media (width<769px ) {
     .news-cards-grid{grid-template-columns: repeat(auto-fill, minmax(224px, 1fr));
-    max-width:100%;
+    max-width:90%;
     gap: 8px;
     padding: 20px 0 20px 0;
     }
   }
   @media (width<536px ) {
     .news-cards-grid{grid-template-columns: repeat(auto-fill, minmax(288px, 1fr));
-    max-width:100%;
+    max-width:90%;
     margin-left: auto;
     margin-right: auto;
     padding: 14px;

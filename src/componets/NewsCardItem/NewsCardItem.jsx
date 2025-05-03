@@ -13,7 +13,8 @@ function NewsCardItem({ article, isSaved, onSave, onDelete, isLoggedIn,keyword }
   const saved = JSON.parse(localStorage.getItem("savedArticles")) || [];
   const alreadySaved = saved.some((a) => a.url === article.url);
 
-  const handleClick = () => {
+  const handleClick = (e) => {
+    e.preventDefault();
     if (isSaved || alreadySaved && onDelete) {
       onDelete(article);
     } else if (!alreadySaved) {
@@ -41,7 +42,7 @@ function NewsCardItem({ article, isSaved, onSave, onDelete, isLoggedIn,keyword }
       ? `news__save_btn ${alreadySaved ? "news__save_btn--active" : ""}`
       : "news__delete-btn"
   }
-  onClick={ isLoggedIn ? handleClick:undefined}
+  onClick={ isLoggedIn ? handleClick : undefined}
 />
   
   {!isLoggedIn && isHome && (

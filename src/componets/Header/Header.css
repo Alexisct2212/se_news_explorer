@@ -6,7 +6,7 @@
   font-size: 18px;
   line-height: 24.8px;
   border-bottom: 1px solid #ffffff7a;
-  position: absolute;
+  
 }
 
 .header__logo {
@@ -181,6 +181,14 @@
 @media (width<=1439px) {
   .header{width: 100%;}
 }
+@media (width<=1024px) {
+  .header__nav_info{
+    margin: 0 20px 0 0;
+  }
+  .saved__articles-btn{
+    margin-left: 20px;
+  }
+}
 @media (width<=769px) {
   .header{
    max-width:769px
@@ -196,7 +204,6 @@
     margin: 14px 40px 12px 16px;
   }
   .header__nav_info{
-    
     margin:0;
   }
  

@@ -40,11 +40,11 @@
     color: black;
     text-decoration: none;
   }
-  @media (width<426px ) {
+  @media (width<480px ) {
     .footer{
       height: 80px;
       flex-direction: column-reverse;
-      padding-top: 20px;
+      padding-top: 30px;
     }
     .footer__right-side{
       gap: 60px;
@@ -52,14 +52,16 @@
     }
     .footer__left-side{
       margin: 0;
-      gap: 105px;
+      letter-spacing: 2px;
     }
     .Tripleten__url{
       position: relative;
       top: 30px;
       right: 100px;
+      padding: 10px 0;
     }
     }
+  
     @media (width<376px ) {
       .footer__right-side{
         gap: 50px;
@@ -67,13 +69,16 @@
       }
       .footer__left-side{
         margin: 0;
-        gap: 80px;
+        gap: 20px;
       }
       .Tripleten__url{
         position: relative;
         top: 30px;
         right: 90px;
       }
+      .footer {
+        padding-top: 50px;
+    }
 
     }
     @media (width<321px ) {
@@ -83,11 +88,14 @@
       }
       .footer__left-side{
         margin: 0;
-        gap: 50px;
+      gap: 10px;
       }
       .Tripleten__url{
         position: relative;
         top: 30px;
         right: 80px;
+      }
+      .footer{
+        padding-top: 70px;
       }
     }

@@ -3,8 +3,10 @@ import CurrentUserContext from "../../context/CurrenteUserContext";
 import "./SavedNews.css";
 import NewsCardItem from "../NewsCardItem/NewsCarditem";
 import { useNavigate } from "react-router-dom";
+import Header from "../Header/Header";
 
-function SavedNews({ isLoggedIn }) {
+
+function SavedNews({ isLoggedIn,handleSignout,activeModal }) {
   const CurrentUser = useContext(CurrentUserContext);
   const [savedArticles, setSavedArticles] = useState([]);
   const navigate = useNavigate();
@@ -65,10 +67,14 @@ function SavedNews({ isLoggedIn }) {
 
   
 
+  
   return (
     <section className="Main__page-profile">
+      <Header isLoggedIn={isLoggedIn}
+      activeModal={activeModal}
+      handleSignout={handleSignout}/>
       <div className="saved__header">
-        <h2 className="saved__header-text">Saved articles</h2>
+        <h1 className="saved__header-text">Saved articles</h1>
         <p className="saved__header-subtext">
           {CurrentUser.name}, you have {savedArticles.length} saved{" "}
           {savedArticles.length === 1 ? "article" : "articles"}
@@ -76,7 +82,7 @@ function SavedNews({ isLoggedIn }) {
         {keywordList.length > 0 && (
           <p className="saved__header-keywords">
             By keywords: <b>{keywordList.join(", ")}
-            {savedArticles.length > 3 && `, and ${savedArticles.length - 3} others`}</b>
+            {savedArticles.length > 3 &&`, and ${savedArticles.length - 3} others`}</b>
           </p>
         )}
       </div>
@@ -96,6 +102,7 @@ function SavedNews({ isLoggedIn }) {
             }
 
             return (
+             
               <NewsCardItem
                 key={index}
                 article={article}
@@ -108,13 +115,12 @@ function SavedNews({ isLoggedIn }) {
           })
         ) : (
           <div className="no-saved-Articles">
-            <p className="no__saved-text">You haven't saved any article,go to home page to save any article</p>
+            <h2 className="no__saved-text">You haven't saved any article,go to home page to save any article</h2>
           </div>
         )}
       </section>
     </section>
   );
 }
-
 
 export default SavedNews;
