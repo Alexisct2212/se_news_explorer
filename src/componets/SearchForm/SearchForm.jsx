@@ -16,15 +16,15 @@ function SearchForm({ onSearch }) {
   };
 
   return (
-    <form className="searchBar__container" onSubmit={handleSubmit}>
+    <form className="search__container" onSubmit={handleSubmit}>
       <input
         type="text"
         placeholder="Enter topic"
         value={search}
         onChange={handleSearchChange}
-        className="searchBar__container-input"
+        className="search__container-input"
       />
-      <button type="submit" className="searchbar__container-btn">
+      <button type="submit" className="search__container-btn">
         Search
       </button>
     </form>

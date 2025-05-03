@@ -58,7 +58,6 @@ function NewsCardItem({ article, isSaved, onSave, onDelete, isLoggedIn,keyword }
   </div>}
      <a href={article.url} target="_blank" rel="noopener noreferrer" className="newscard_anchor-url">
       <h1 className="news_card-date">
-        {" "}
         {new Date(article.publishedAt).toLocaleDateString("en-US", {
           year: "numeric",
           month: "long",

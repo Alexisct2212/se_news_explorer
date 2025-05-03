@@ -17,12 +17,12 @@
   font-weight: 700;
 }
 
-.header__nav_info {
+.header__nav {
   display: flex;
   align-items: center;
   margin: 0 108px 0 0;
 }
-.saved__articles-btn{
+.header__savedArticles-btn{
   margin-left: 66px;
   width: 120px;
   height: 24px;
@@ -33,7 +33,7 @@
   font-weight: 500;
 }
 
-.user__logout-btn{
+.header__logout-btn{
   width: 140px;
   height: 60px;
   margin: 0 0 0 64px;
@@ -51,7 +51,7 @@
   font-family: "Roboto";
   font-weight: 500;
 }
-.logout_header-img{
+.header__logout-img{
   width: 24px;
   height: 24px;
 }
@@ -60,7 +60,7 @@
   color: black;
 }
 
-.header__signup {
+.header__signup-btn {
   background-color: transparent;
   color: white;
   width: 176px;
@@ -128,8 +128,8 @@
 }
 
 .header--white .header__home-page,
-.header--white .saved__articles-btn,
-.header--white .header__signup,
+.header--white .header__savedArticles-btn,
+.header--white .header__signup-btn,
 .header--white .header__username-title {
   color: black;
   border-color: black;
@@ -182,11 +182,11 @@
   .header{width: 100%;}
 }
 @media (width<=1024px) {
-  .header__nav_info{
+  .header__nav{
     margin: 0 20px 0 0;
   }
-  .saved__articles-btn{
-    margin-left: 20px;
+  .header__savedArticles-btn{
+    margin-left: 40px;
   }
 }
 @media (width<=769px) {
@@ -203,19 +203,19 @@
     height: 40px;
     margin: 14px 40px 12px 16px;
   }
-  .header__nav_info{
+  .header__nav{
     margin:0;
   }
  
-  .saved__articles-btn{
+  .header__savedArticles-btn{
     margin-left: 16px;
   }
-  .user__logout-btn{
+  .header__logout-btn{
     margin: 0 20px 0 24px;
   }
 }
 @media (width<=645px) {
-.header__nav_info.header__menu--open{
+.header__nav.header__menu--open{
   
     display: flex;
     flex-direction: column;
@@ -231,15 +231,15 @@
   position: relative;
   z-index: 99;
 }
-.header__nav_info{
+.header__nav{
   display: none;
 }
 
-.header--white .header__nav_info {
+.header--white .header__nav {
   background-color: white;
 }
 
-.header--transparent .header__nav_info {
+.header--transparent .header__nav {
   background-color: black;
 
 }
@@ -273,23 +273,23 @@
   right: -60px;
   top:30px
 }
-.user__logout-btn,.saved__articles-btn{
+.header__logout-btn,.header__savedArticles-btn{
   left: 50px;
   position: relative;
   margin:5px 0 5px 0;
 
 }
-.user__logout-btn{
+.header__logout-btn{
   width: 288px;
   justify-content:space-around;
-  left: 20px;
+  left: 50px;
   
 }
 .header__home-page{
   left: 50px;
   margin-top: 50px;
 }
-.saved__articles-btn{
+.header__savedArticles-btn{
   margin: 20px 0 20px 0;
 }
 .selected__button.line_active {

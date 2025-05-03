@@ -30,7 +30,7 @@ function Header({ activeModal, isLoggedIn,handleLoginModal,handleSignout}) {
       <button className="header__menu-toggle" onClick={toggleMenu}>
         <span className={`${isHome ? "menu-icon": "black-menu-icon"}`} src={`${isHome ? menu: blackmenu}`}></span>
       </button>
-      <nav className={`header__nav_info ${menuOpen ? "header__menu--open" : ""}`}>
+      <nav className={`header__nav ${menuOpen ? "header__menu--open" : ""}`}>
       {isLoggedIn ? (
         <>
           <Link to="/">
@@ -44,16 +44,16 @@ function Header({ activeModal, isLoggedIn,handleLoginModal,handleSignout}) {
           </Link>
           <Link to="/saved-news">
           <button
-            className={`saved__articles-btn ${activeButton === "saved" ? "selected" : ""}`}
+            className={`header__savedArticles-btn ${activeButton === "saved" ? "selected" : ""}`}
             onClick={() => handleButtonClick("saved")}
           >
             Saved articles
             <div className={`selected__button ${activeButton === "saved" ? "line_active" : ""}`}></div>
           </button>
           </Link>
-          <button className="user__logout-btn" onClick={handleSignout}>
+          <button className="header__logout-btn" onClick={handleSignout}>
             <p className="header__username-title">{CurrentUser.name}</p>
-            <img src={isHome ? logOutWhite : logOut} alt="logout btn" className="logout__header-img" />
+            <img src={isHome ? logOutWhite : logOut} alt="logout btn" className="header__logout-img" />
           </button>
         </>
       ) : (
@@ -67,7 +67,7 @@ function Header({ activeModal, isLoggedIn,handleLoginModal,handleSignout}) {
           </button>
           
           <button
-            className={`header__signup ${activeButton === "signin" ? "selected" : ""}`}
+            className={`header__signup-btn ${activeButton === "signin" ? "selected" : ""}`}
             type="button"
             onClick={()=>{setMenuOpen(false); handleLoginModal();}}
           >

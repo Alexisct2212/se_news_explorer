@@ -1,4 +1,4 @@
-.Main__page-profile{
+.savedNews{
   display: flex ;
   justify-items: center;
   margin: 0 auto 0;
@@ -6,17 +6,17 @@
   align-items: flex-start;
   flex-direction: column;
 }
-.saved__header{
+.savedNews__header{
  height: 200px;
  margin: 20px 0 0 40px;
 }
-.saved__header-text{
+.savedNews__header-text{
     color: #1A1B2280;
     font-family: "Roboto";
     font-weight: 400;
     font-style: normal;
 }
-.saved__header-subtext{
+.savedNews__header-subtext{
   font-family: "Roboto Slab";
   font-weight: 400;
   font-style: normal;
@@ -26,7 +26,7 @@
   font-size: 30px;
   line-height: 34px;
 }
-.saved__header-keywords{
+.savedNews__header-keywords{
 margin-top: 30px;
 
 }
@@ -41,7 +41,7 @@ margin-top: 30px;
   position: absolute;
   top: 500px;
 }
-.news-cards-grid {
+.SavedNews__cards {
     max-width: 90%;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(400px, 1fr)); /* 3 cards per row */
@@ -55,31 +55,31 @@ margin-top: 30px;
     margin:0px
   }
   @media (width<769px ) {
-    .news-cards-grid{grid-template-columns: repeat(auto-fill, minmax(224px, 1fr));
+    .SavedNews__cards{grid-template-columns: repeat(auto-fill, minmax(224px, 1fr));
     max-width:90%;
     gap: 8px;
     padding: 20px 0 20px 0;
     }
   }
   @media (width<536px ) {
-    .news-cards-grid{grid-template-columns: repeat(auto-fill, minmax(288px, 1fr));
+    .SavedNews__cards{grid-template-columns: repeat(auto-fill, minmax(288px, 1fr));
     max-width:90%;
     margin-left: auto;
     margin-right: auto;
     padding: 14px;
     }
     
-    .saved__header {
+    .savedNews__header {
         width: 300px;
         margin: 0 0 20px 16px;
     }
-    .saved__header-subtext,.saved__header-keywords{
+    .savedNews__header-subtext,.saved__header-keywords{
       width: 288px;
     }
-    .saved__header-text{
+    .savedNews__header-text{
       font-size: 12px;
     }
-    .saved__header-subtext{
+    .savedNews__header-subtext{
       font-size: 30px;
     }
   }

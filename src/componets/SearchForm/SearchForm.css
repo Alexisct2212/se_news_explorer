@@ -1,4 +1,4 @@
-.searchBar__container{
+.search__container{
     display: flex;
     position: relative;
     top:-60px;
@@ -7,7 +7,7 @@
     justify-content: space-between;
     align-items: center;
 }
-.searchBar__container-input{
+.search__container-input{
     text-indent: 25px;
     height: 64px;
     width: 608px;
@@ -16,7 +16,7 @@
     font-family: "Roboto";
     font-weight: 500;
 }
-.searchbar__container-btn{
+.search__container-btn{
     position: absolute;
     background-color:#2F71E5;
     color: white;
@@ -30,47 +30,47 @@
     font-family: "Roboto";
     font-weight: 400;
 }
-.searchbar__container-btn:hover{
+.search__container-btn:hover{
     background-color: #347EFF;
     
 }
-.searchbar__container-btn:active{
+.search__container-btn:active{
     background-color:#2A65CC;
 }
 @media (width<926px ) {
-    .searchBar__container{
+    .search__container{
         width: 600px;
     }
-    .searchBar__container-input{
+    .search__container-input{
         width:500px ;
     }
-    .searchbar__container-btn{
+    .search__container-btn{
         width: 200px;
         right: 95px;
     }
     }
     @media (width<826px ) {
-        .searchBar__container{
+        .search__container{
             width: 700px;
         }
-        .searchBar__container-input{
+        .search__container-input{
             width:500px ;
         }
-        .searchbar__container-btn{
+        .search__container-btn{
             width: 200px;
         }
         }
 @media (width<=769px) {
-    .searchBar__container{
+    .search__container{
         top:-50px;
         left: 0px;
         max-width: 448px;
     }
-    .searchBar__container-input{
+    .search__container-input{
        max-width: 448px;
        height: 56px;
     }
-    .searchbar__container-btn{
+    .search__container-btn{
     right:-1px;
     top: 0px;
     height: 60px;
@@ -78,17 +78,17 @@
     }
 }
 @media (width<426px ) {
-   .searchBar__container{
+   .search__container{
     width: 100%;
     top:-80px;
     margin: 0 16px 0 16px;
     flex-direction: column;
     align-items: center;
    }
-   .searchBar__container-input{
+   .search__container-input{
     width: 288px;
    }
-   .searchbar__container-btn{
+   .search__container-btn{
     width: 288px;
     position: relative;
     top: 20px;
@@ -97,15 +97,15 @@
   }
   
   @media (width<376px ) {
-    .searchbar__container-btn{
+    .search__container-btn{
         right: 0px;
     }
     }
     @media (width<321px ) {
-        .searchbar__container-btn{
+        .search__container-btn{
             right: 0px;
         }
-        .searchBar__container{
+        .search__container{
             top: -50px;
         }
         }

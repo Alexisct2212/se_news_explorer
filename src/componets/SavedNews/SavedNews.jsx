@@ -69,25 +69,25 @@ function SavedNews({ isLoggedIn,handleSignout,activeModal }) {
 
   
   return (
-    <section className="Main__page-profile">
+    <section className="savedNews">
       <Header isLoggedIn={isLoggedIn}
       activeModal={activeModal}
       handleSignout={handleSignout}/>
-      <div className="saved__header">
-        <h1 className="saved__header-text">Saved articles</h1>
-        <p className="saved__header-subtext">
+      <div className="savedNews__header">
+        <h1 className="savedNews__header-text">Saved articles</h1>
+        <p className="savedNews__header-subtext">
           {CurrentUser.name}, you have {savedArticles.length} saved{" "}
           {savedArticles.length === 1 ? "article" : "articles"}
         </p>
         {keywordList.length > 0 && (
-          <p className="saved__header-keywords">
+          <p className="savedNews__header-keywords">
             By keywords: <b>{keywordList.join(", ")}
             {savedArticles.length > 3 &&`, and ${savedArticles.length - 3} others`}</b>
           </p>
         )}
       </div>
 
-      <section className="news-cards-grid">
+      <section className="SavedNews__cards">
         {savedArticles.length > 0 ? (
           savedArticles.map((article, index) => {
             // Extract one keyword from the title

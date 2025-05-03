@@ -11,9 +11,9 @@
   
   .NewsCard__search-text{
     font-family: "Roboto Slab";
+    position: absolute;
     font-weight: 400;
     font-style: normal;
-    position: absolute;
     font-size: 40px;
     line-height: 46px;
     top:620px
@@ -189,7 +189,7 @@
   }
 }
 @media (width<426px) {
-  .NewsCard__search-p{
+  .NewsCard__search-text{
     font-size: 30px;
     left:30px;
   }
@@ -209,7 +209,7 @@
   }
 }
 @media (width<321px) {
-  .NewsCard__search-p{
+  .NewsCard__search-text{
     font-size: 30px;
     left:30px;
   }
