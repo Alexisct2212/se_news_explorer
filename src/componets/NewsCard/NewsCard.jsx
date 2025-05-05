@@ -47,6 +47,7 @@ const NewsCard = ({isLoggedIn}) => {
 
   return (
     <section className="news-container">
+
     {/* 🔍 Search Bar */}
     <SearchForm setSearchTerm={setSearchTerm} onSearch={fetchNews} />
 
@@ -55,11 +56,12 @@ const NewsCard = ({isLoggedIn}) => {
 
     {/* ❌ Error Message */}
     {!loading && error && <Preloader foundNews={false} />}
-
+   
     {/* ✅ Display News Cards */}
     {!loading && !error && news.length > 0 && (
-      <section className="news-list">
-        <h2 className="NewsCard__search-text">Search results</h2>
+      <>
+        <h2 className="news__list-title">Search results</h2>
+      <section className="news__list">
         {news.slice(0, visibleCount).map((article, index) => (
           <NewsCardItem
              key={index}
@@ -70,11 +72,12 @@ const NewsCard = ({isLoggedIn}) => {
           />
         ))}
       </section>
+      </>
     )}
 
     {/* ➕ Show More Button */}
     {visibleCount < news.length && (
-      <button onClick={() => setVisibleCount(visibleCount + 3)} className="news__Showmore-btn">Show More</button>
+      <button onClick={() => setVisibleCount(visibleCount + 3)} className="news__show-more">Show More</button>
     )}
   </section>
   );

@@ -274,7 +274,7 @@
   top:30px
 }
 .header__logout-btn,.header__savedArticles-btn{
-  left: 50px;
+  left: 45px;
   position: relative;
   margin:5px 0 5px 0;
 
@@ -282,7 +282,7 @@
 .header__logout-btn{
   width: 288px;
   justify-content:space-around;
-  left: 50px;
+  left: 30px;
   
 }
 .header__home-page{
@@ -303,8 +303,14 @@
     right: -40px;
   }
 }
-@media (width<321px){
+@media (width<330px){
   .header__signup { 
     right: -20px;
+  }
+  .header__logout-btn{
+    left: 20px;
+  }
+  .header__savedArticles-btn{
+    left: 45px;
   }
 }

@@ -35,38 +35,38 @@ function NewsCardItem({ article, isSaved, onSave, onDelete, isLoggedIn,keyword }
         width="300"
         height="200"
       />
-<div className="news__tooltip-container">
+<div className="news-card__tooltip">
 <button
   className={
     isHome
-      ? `news__save_btn ${alreadySaved ? "news__save_btn--active" : ""}`
-      : "news__delete-btn"
+      ? `news-card__save-button ${alreadySaved ? "news-card__save-button--active" : ""}`
+      : "news-card__delete-button"
   }
   onClick={ isLoggedIn ? handleClick : undefined}
 />
   
   {!isLoggedIn && isHome && (
-    <span className="news__tooltip-save">Login to save article</span>
+    <span className="news-card__tooltip-save">Login to save article</span>
   )}
 
   {!isHome &&(
-    <span className="news__tooltip-delete">Remove from saved</span>
+    <span className="news-card__tooltip-delete">Remove from saved</span>
   )}
 </div>
 {!isHome&& <div className="news-card__keyword-tooltip">
     <span className="news-card__keyword-text">{keyword}</span>
   </div>}
-     <a href={article.url} target="_blank" rel="noopener noreferrer" className="newscard_anchor-url">
-      <h1 className="news_card-date">
+     <a href={article.url} target="_blank" rel="noopener noreferrer" className="news-card__link">
+      <h2 className="news-card__date">
         {new Date(article.publishedAt).toLocaleDateString("en-US", {
           year: "numeric",
           month: "long",
           day: "numeric",
         })}
-      </h1>
-      <h2>{article.title}</h2>
+      </h2>
+      <h1>{article.title}</h1>
       <p>{article.description}</p>
-      <h3 className="news__sourceName-title">
+      <h3 className="news-card__source">
         {article.source?.id || article.source?.name || "unknown Source"}
       </h3>
       </a>

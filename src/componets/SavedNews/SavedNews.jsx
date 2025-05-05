@@ -86,7 +86,7 @@ function SavedNews({ isLoggedIn,handleSignout,activeModal }) {
           </p>
         )}
       </div>
-
+      <div className="SavedNews__container">
       <section className="SavedNews__cards">
         {savedArticles.length > 0 ? (
           savedArticles.map((article, index) => {
@@ -100,7 +100,7 @@ function SavedNews({ isLoggedIn,handleSignout,activeModal }) {
                 .filter((word) => word.length > 3);
               keyword = titleWords[0] || "";
             }
-
+            
             return (
              
               <NewsCardItem
@@ -111,14 +111,15 @@ function SavedNews({ isLoggedIn,handleSignout,activeModal }) {
                 keyword={keyword}
                 isLoggedIn={isLoggedIn}
               />
-            );
+            )
           })
         ) : (
           <div className="no-saved-Articles">
-            <h2 className="no__saved-text">You haven't saved any article,go to home page to save any article</h2>
+            <h2 className="no__saved-text">You haven't saved any article, Go to home page to save any article</h2>
           </div>
         )}
       </section>
+        </div>
     </section>
   );
 }

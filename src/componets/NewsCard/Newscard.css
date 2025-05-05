@@ -9,24 +9,26 @@
     
   }
   
-  .NewsCard__search-text{
+  .news__list-title{
     font-family: "Roboto Slab";
-    position: absolute;
+    position: relative;
     font-weight: 400;
     font-style: normal;
     font-size: 40px;
     line-height: 46px;
-    top:620px
+    top: 40px;
+    right: 35%;
+    margin: 0;
   }
   
   
   /* Container holding all cards */
-.news-list {
+.news__list {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(400px, 1fr)); /* Responsive */
   gap: 20px;
   padding: 20px;
-  margin-top: 150px;
+  margin-top: 50px;
 }
 
 /* Each card */
@@ -58,7 +60,7 @@
 .news-card h3 {
   font-size: 18px;
 }
-.news-card h2 {
+.news-card h1 {
   height: 60px;
   overflow: hidden;
   font-size: 26px;
@@ -85,7 +87,7 @@
   color: #1e90ff;
   font-weight: bold;
 }
-.news__Showmore-btn{
+.news__show-more{
   background-color: white;
   height: 64px;
   width: 288px;
@@ -95,10 +97,10 @@
   font-family: "Roboto";
   font-weight: 500;
 }
-.news__Showmore-btn:hover{
+.news__show-more:hover{
   background-color: #e8e8e8;
 }
-.news__save_btn{
+.news-card__save-button{
   position: absolute;
   top: -270px;
   right: 20px;
@@ -110,29 +112,29 @@
   border: none;
   border-radius: 5px;
 }
-.news__save_btn:hover{
+.news-card__save-button:hover{
   background-image: url(../../assets/hover-bookmark.png);
 }
-.news__save_btn--active{
+.news-card__save-button--active{
   background-image: url(../../assets/saved__btn-marked.png);
   background-position: center;
 }
 
 
-.news__sourceName-title{
+.news-card__source{
   color: #B6BCBF;
   font-family: "Roboto Slab";
   font-weight: 700;
   font-size: 16px;
   letter-spacing: 0.6px;
 }
-.news_card-date{
+.news-card__date{
   color: #B6BCBF;
   font-family: "Source Sans Pro";
   font-weight: 400;
   font-size: 18px;
 }
-.news__delete-btn{
+.news-card__delete-button{
   position: absolute;
   top: -270px;
   right: 20px;
@@ -144,33 +146,41 @@
   border-radius: 8px;
   background-repeat: no-repeat;
 }
-.news__delete-btn:hover{
+.news-card__delete-button:hover{
   background-image: url(../../assets/trash.png);
 }
-.newscard_anchor-url{
+.news-card__link{
   color: #000;
+}
+@media (width<1050px) {
+  .news__list-title{
+    right: 35%;
+  }
 }
 
 @media (width<770px) {
-  .news-list{grid-template-columns: repeat(auto-fill, minmax(224px, 1fr));}
+  .news__list{grid-template-columns: repeat(auto-fill, minmax(224px, 1fr));}
   .news-card {height: unset;}
   .news-card p{
     overflow: hidden;
   }
-  .news-card h2{
+  .news-card_date{
     line-height: unset;
     font-size: 19px;
   }
-  .news__save_btn{
+  .news-card__save-button{
     top: -270px;
     right: 10px;
   }
-  .news__delete-btn{
+  .news-card__delete-button{
     top: -260px;
     right: 15px;
   }
-  .news__tooltip-save{
+  .news-card__tooltip-save{
     left: 300px;
+  }
+  .news__list-title{
+    right: 28%;
   }
 }
 @media (width<456px) {
@@ -178,26 +188,26 @@
   .news-card p {
     max-height: unset;
   }
-  .news__save_btn{
+  .news-card__save-button{
     top: -255px;
     right: 10px;
   }
-  .news__delete-btn{
+  .news-card__delete-button{
     top: -250px;
     right: 15px;
     
   }
 }
 @media (width<426px) {
-  .NewsCard__search-text{
+  .news__list-title{
     font-size: 30px;
-    left:30px;
+    right:20%;
   }
-  .news__save_btn{
+  .news-card__save-button{
     top: -265px;
     right: 10px;
   }
-  .news__delete-btn{
+  .news-card__delete-button{
     top: -260px;
     right: 15px;
   }
@@ -209,15 +219,15 @@
   }
 }
 @media (width<321px) {
-  .NewsCard__search-text{
+  .news__list-title{
     font-size: 30px;
-    left:30px;
+    right:10%;
   }
-  .news__save_btn{
+  .news-card__save-button{
     top: -270px;
     right: 10px;
   }
-  .news__delete-btn{
+  .news-card__delete-button{
     
     top: -260px;
     right: 15px;

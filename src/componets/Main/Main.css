@@ -18,6 +18,7 @@ text-align: center;
     font-family: "Roboto Slab";
     font-weight: 400;
     font-style: normal;
+    text-align: left;
     top:158px;
     max-width: 608px;
     height: 128px;
@@ -34,6 +35,18 @@ text-align: center;
     margin: 0;
     max-width: 600px; /* Optional: Limit the width of the text */
   }
+  @media (width<775px ) {
+    .Main__text{
+        width: 385px;
+        font-size: 36px;
+        margin-bottom: 150px;
+    }
+    .Main__subtext{
+        position: relative;
+        width: 452px;
+        top: -160px;
+    }
+   }
   @media (width<426px ) {
     .Main{
         background-size: auto;

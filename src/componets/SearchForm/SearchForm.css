@@ -1,4 +1,4 @@
-.search__container{
+.search{
     display: flex;
     position: relative;
     top:-60px;
@@ -7,7 +7,7 @@
     justify-content: space-between;
     align-items: center;
 }
-.search__container-input{
+.search__input{
     text-indent: 25px;
     height: 64px;
     width: 608px;
@@ -16,7 +16,7 @@
     font-family: "Roboto";
     font-weight: 500;
 }
-.search__container-btn{
+.search__button{
     position: absolute;
     background-color:#2F71E5;
     color: white;
@@ -30,47 +30,47 @@
     font-family: "Roboto";
     font-weight: 400;
 }
-.search__container-btn:hover{
+.search__button:hover{
     background-color: #347EFF;
     
 }
-.search__container-btn:active{
+.search__button:active{
     background-color:#2A65CC;
 }
 @media (width<926px ) {
-    .search__container{
+    .search{
         width: 600px;
     }
-    .search__container-input{
+    .search__input{
         width:500px ;
     }
-    .search__container-btn{
+    .search__button{
         width: 200px;
         right: 95px;
     }
     }
     @media (width<826px ) {
-        .search__container{
+        .search{
             width: 700px;
         }
-        .search__container-input{
+        .search__input{
             width:500px ;
         }
-        .search__container-btn{
+        .search__button{
             width: 200px;
         }
         }
 @media (width<=769px) {
-    .search__container{
+    .search{
         top:-50px;
         left: 0px;
         max-width: 448px;
     }
-    .search__container-input{
+    .search__input{
        max-width: 448px;
        height: 56px;
     }
-    .search__container-btn{
+    .search__button{
     right:-1px;
     top: 0px;
     height: 60px;
@@ -78,17 +78,17 @@
     }
 }
 @media (width<426px ) {
-   .search__container{
+   .search{
     width: 100%;
     top:-80px;
     margin: 0 16px 0 16px;
     flex-direction: column;
     align-items: center;
    }
-   .search__container-input{
+   .search__input{
     width: 288px;
    }
-   .search__container-btn{
+   .search__button{
     width: 288px;
     position: relative;
     top: 20px;
@@ -97,15 +97,15 @@
   }
   
   @media (width<376px ) {
-    .search__container-btn{
+    .search__button{
         right: 0px;
     }
     }
     @media (width<321px ) {
-        .search__container-btn{
+        .search__button{
             right: 0px;
         }
-        .search__container{
+        .search{
             top: -50px;
         }
         }
