@@ -15,11 +15,8 @@
     
 }
 .around__circle{
-  position: relative;
-   height: 170px;
-   max-width: 600px;
-   top:-100px;
-   left:0px;
+  flex: 1;
+  max-width: 600px;
 }
 .about__subtext{
     max-width: 600px;
@@ -49,13 +46,7 @@
         height: 100px;
         overflow: scroll;
     }
-    .around__circle {
-        position: absolute;
-        height: 170px;
-        max-width: 600px;
-        top: 150px;
-        left: 450px;
-    }
+   
   }
 @media (width<861px) {
     .about_me-avatar{
@@ -69,13 +60,7 @@
         height: 100px;
         overflow: scroll;
     }
-    .around__circle {
-        position: absolute;
-        height: 170px;
-        max-width: 600px;
-        top: 131px;
-        left: 400px;
-    }
+    
   }
   @media (width<=769px) {
     .about_me-avatar{
@@ -89,13 +74,7 @@
         height: 100px;
         overflow: scroll;
     }
-    .around__circle {
-        
-        height: 168px;
-        max-width: 424px;
-        top: 165px;
-        left: 302px;
-    }
+    
   }
 
  
@@ -114,13 +93,7 @@
         margin-top: 10px;
         margin-bottom: 10px;
     }
-    .around__circle {
-        height: 168px;
-        max-width: 424px;
-        position: relative;
-        top: -30px;
-        left: 7px;
-    }
+    
     .about__subtext{
         height: fit-content;
         width: 350px;
