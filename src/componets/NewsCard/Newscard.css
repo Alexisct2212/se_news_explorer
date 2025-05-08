@@ -1,34 +1,30 @@
 .news-container {
     display: flex;
     flex-direction: column;
-    align-items: center;
     max-width: 1300px;
     height: 976px;
     height: auto;
-    margin: -50px auto 0px;
+    margin: 30px auto 0px;
     
   }
   
-  .news__list-title{
+  .news-container__main-title{
     font-family: "Roboto Slab";
-    position: relative;
     font-weight: 400;
     font-style: normal;
     font-size: 40px;
     line-height: 46px;
-    top: 40px;
-    right: 35%;
-    margin: 0;
+    margin: 30px;
   }
   
   
   /* Container holding all cards */
-.news__list {
+.news-container__card-list {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(400px, 1fr)); /* Responsive */
   gap: 20px;
   padding: 20px;
-  margin-top: 50px;
+  
 }
 
 /* Each card */
@@ -43,6 +39,7 @@
   transition: transform 0.2s ease-in-out;
   position: relative;
   height: 546px;
+  
 }
 
 .news-card:hover {
@@ -87,17 +84,17 @@
   color: #1e90ff;
   font-weight: bold;
 }
-.news__show-more{
+.news-container__button{
   background-color: white;
   height: 64px;
   width: 288px;
   border-radius: 80px;
-  margin: 64px auto 80px;
+  margin: 50px auto 50px;
   border:none;
   font-family: "Roboto";
   font-weight: 500;
 }
-.news__show-more:hover{
+.news-container__button:hover{
   background-color: #e8e8e8;
 }
 .news-card__save-button{
@@ -153,13 +150,18 @@
   color: #000;
 }
 @media (width<1050px) {
-  .news__list-title{
+  .news-container__main-title{
+    right: 35%;
+  }
+}
+@media (width<515px) {
+  .news-container__main-title{
     right: 35%;
   }
 }
 
 @media (width<770px) {
-  .news__list{grid-template-columns: repeat(auto-fill, minmax(224px, 1fr));}
+  .news-container__card-list{grid-template-columns: repeat(auto-fill, minmax(224px, 1fr));}
   .news-card {height: unset;}
   .news-card p{
     overflow: hidden;
@@ -176,10 +178,10 @@
     top: -260px;
     right: 15px;
   }
-  .news-card__tooltip-save{
+  .news-card__modal-save{
     left: 300px;
   }
-  .news__list-title{
+  .news-container__main-title{
     right: 28%;
   }
 }
@@ -199,7 +201,7 @@
   }
 }
 @media (width<426px) {
-  .news__list-title{
+  .news-container__main-title{
     font-size: 30px;
     right:20%;
   }
@@ -212,14 +214,14 @@
     right: 15px;
   }
   .news-container {
-    margin: -90px auto 0;
+    margin: 20px auto 0;
   }
   .news__Showmore-btn{
     margin:0px auto 14px
   }
 }
 @media (width<321px) {
-  .news__list-title{
+  .news-container__main-title{
     font-size: 30px;
     right:10%;
   }

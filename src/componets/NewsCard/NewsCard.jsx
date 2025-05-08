@@ -1,56 +1,16 @@
 import "./NewsCard.css";
-import { useState } from "react";
 import Preloader from "../Preloader/Preloader";
-import NewsApi from "../../utils/NewsApi";
-import SearchForm from "../searchForm/SearchForm";
 import NewsCardItem from "../NewsCardItem/NewsCarditem";
+import { useState } from "react";
 
-const API_KEY = "9311ed1a839b439e8feb735c8169a497";
 
-const NewsCard = ({isLoggedIn}) => {
-  const [news, setNews] = useState([]);
-  const [searchTerm, setSearchTerm] = useState("");
+const NewsCard = ({isLoggedIn,news,loading,error,hasSearched}) => {
+
   const [visibleCount, setVisibleCount] = useState(3);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(null);
-  const [hasSearched, setHasSearched] = useState(false);
-
-  // ✅ Function to fetch news
-  const fetchNews = async (searchTerm) => {
-    if (!searchTerm)return ;
-    setLoading(true);
-    setError(null);
-    setHasSearched(true); // ✅ Mark as searched
-    
-
-    try {
-      const articles = await NewsApi(API_KEY,searchTerm);
-      if (!articles || articles.length === 0) {
-        throw new Error("No news found");
-      }
-
-      setNews(articles);
-    } catch (err) {
-      setError(err.message);
-      setNews([]);
-    } finally {
-      setLoading(false);
-    }
-  };
-
   
-
-  // ✅ Filter articles based on search term
-  const filteredNews = news.filter((article) =>
-    article.title?.toLowerCase().includes(searchTerm.toLowerCase())
-  );
-
   return (
     <section className="news-container">
-
-    {/* 🔍 Search Bar */}
-    <SearchForm setSearchTerm={setSearchTerm} onSearch={fetchNews} />
-
+     
     {/* 🔄 Preloader */}
     {loading && <Preloader foundNews={null} />}
 
@@ -60,8 +20,8 @@ const NewsCard = ({isLoggedIn}) => {
     {/* ✅ Display News Cards */}
     {!loading && !error && news.length > 0 && (
       <>
-        <h2 className="news__list-title">Search results</h2>
-      <section className="news__list">
+        <h2 className="news-container__main-title">Search results</h2>
+      <section className="news-container__card-list">
         {news.slice(0, visibleCount).map((article, index) => (
           <NewsCardItem
              key={index}
@@ -77,7 +37,7 @@ const NewsCard = ({isLoggedIn}) => {
 
     {/* ➕ Show More Button */}
     {visibleCount < news.length && (
-      <button onClick={() => setVisibleCount(visibleCount + 3)} className="news__show-more">Show More</button>
+      <button onClick={() => setVisibleCount(visibleCount + 3)} className="news-container__button">Show More</button>
     )}
   </section>
   );

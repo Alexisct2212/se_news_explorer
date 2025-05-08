@@ -12,7 +12,7 @@
     border-bottom-color: #888;
     border-radius: 50%;
     position: relative;
-    top: 90px;
+    top: 50px;
     left:0px;
     margin: auto;
     animation: spin .75s infinite linear;
@@ -25,7 +25,7 @@
   .Preloader__text{
     position: relative;
     left: 0;
-    bottom: -26%;
+    bottom: -40%;
     height: 20px;
     color: #B6BCBF;
     font-size: 16px;

@@ -20,6 +20,7 @@ function App(){
     const [currentUser, setCurrentUser] = useState(null);
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     const [foundNews, setFoundNews] = useState(false)
+    
     const navigate = useNavigate();
     //Open And Close func
     

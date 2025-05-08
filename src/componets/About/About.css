@@ -1,4 +1,4 @@
-.About{
+.about{
  max-width: 1440px;
  height: 624px;
  display: flex;
@@ -6,7 +6,7 @@
  background-color: #fff;
  position: relative;
 }
-.about_me-avatar{
+.about__author-img{
     margin-left: 104px;
     margin-right: 56px;
     height: 464px;
@@ -27,7 +27,7 @@
     margin-bottom: 20px;
 }
 
-.About__title{
+.about__title{
     font-family: "Roboto Slab";
     font-weight: 400;
     font-display: swap;
@@ -35,7 +35,7 @@
     font-size: 40px;
 }
 @media (width<1025px) {
-    .about_me-avatar{
+    .about__author-img{
         height: 332px;
         width: 332px;
         margin-left: 40px;
@@ -49,7 +49,7 @@
    
   }
 @media (width<861px) {
-    .about_me-avatar{
+    .about__author-img{
         height: 332px;
         width: 332px;
         margin-left: 40px;
@@ -63,7 +63,7 @@
     
   }
   @media (width<=769px) {
-    .about_me-avatar{
+    .about__author-img{
         height: 232px;
         width: 232px;
         margin-left: 40px;
@@ -80,14 +80,14 @@
  
 
   @media (width<570px ) {
-    .About{
+    .about{
         flex-direction: column;
     }
-    .About__title{
+    .about__title{
         font-size: 30px;
         text-align: center;
     }
-    .about_me-avatar{
+    .about__author-img{
         height: 272px;
         width: 272px;
         margin-top: 10px;

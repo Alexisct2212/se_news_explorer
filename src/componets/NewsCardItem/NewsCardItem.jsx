@@ -46,11 +46,11 @@ function NewsCardItem({ article, isSaved, onSave, onDelete, isLoggedIn,keyword }
 />
   
   {!isLoggedIn && isHome && (
-    <span className="news-card__tooltip-save">Login to save article</span>
+    <span className="news-card__modal-save">Login to save article</span>
   )}
 
   {!isHome &&(
-    <span className="news-card__tooltip-delete">Remove from saved</span>
+    <span className="news-card__modal-delete">Remove from saved</span>
   )}
 </div>
 {!isHome&& <div className="news-card__keyword-tooltip">

@@ -1,11 +1,12 @@
 .search{
     display: flex;
     position: relative;
-    top:-60px;
+    top:70px;
     left: 70px;
     width: 776px;
     justify-content: space-between;
     align-items: center;
+    margin: 30px;
 }
 .search__input{
     text-indent: 25px;
@@ -40,6 +41,7 @@
 @media (width<926px ) {
     .search{
         width: 600px;
+        top: 50px;
     }
     .search__input{
         width:500px ;
@@ -51,7 +53,7 @@
     }
     @media (width<826px ) {
         .search{
-            width: 700px;
+            width: 600px;
         }
         .search__input{
             width:500px ;
@@ -77,10 +79,15 @@
     width: 160px;
     }
 }
+@media (width<505px ) {
+    .search{
+        width: 80%;
+    }
+}
 @media (width<426px ) {
    .search{
     width: 100%;
-    top:-80px;
+    top:60px;
     margin: 0 16px 0 16px;
     flex-direction: column;
     align-items: center;
@@ -106,6 +113,6 @@
             right: 0px;
         }
         .search{
-            top: -50px;
+            top: 60px;
         }
         }

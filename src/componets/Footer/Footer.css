@@ -13,7 +13,7 @@
   .footer__right-side {
     display: flex;
     gap: 40px; /* Space between elements on the right side */
-    margin-right: 104px;
+    margin-right: 100px;
   }
   .footer__left-side {
     margin-left: 100px;
@@ -39,6 +39,11 @@
   a,Link{
     color: black;
     text-decoration: none;
+  }
+  @media (width<770px ) {
+    .footer__left-side{
+      margin-left: 40px;
+    }
   }
   @media (width<480px ) {
     .footer{
@@ -72,7 +77,6 @@
         gap: 20px;
       }
       .Tripleten__url{
-        position: relative;
         top: 30px;
         right: 90px;
       }
@@ -88,12 +92,11 @@
       }
       .footer__left-side{
         margin: 0;
-      gap: 10px;
+        gap: 10px;
       }
       .Tripleten__url{
-        position: relative;
         top: 30px;
-        right: 80px;
+        right: 82px;
       }
       .footer{
         padding-top: 70px;

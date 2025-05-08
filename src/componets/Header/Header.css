@@ -128,7 +128,7 @@
 }
 
 .header--white .header__home-page,
-.header--white .header__savedArticles-btn,
+.header--white .header__savedArticles-btn,.header--white .header__savedArticles-btn,
 .header--white .header__signup-btn,
 .header--white .header__username-title {
   color: black;
@@ -272,6 +272,9 @@
   position: relative;
   right: -60px;
   top:30px
+}
+.header__signup-btn{
+  margin:40px 0 0 40px ;
 }
 .header__logout-btn,.header__savedArticles-btn{
   left: 45px;
