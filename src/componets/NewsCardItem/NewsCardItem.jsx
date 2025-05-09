@@ -57,18 +57,19 @@ function NewsCardItem({ article, isSaved, onSave, onDelete, isLoggedIn,keyword }
     <span className="news-card__keyword-text">{keyword}</span>
   </div>}
      <a href={article.url} target="_blank" rel="noopener noreferrer" className="news-card__link">
-      <h2 className="news-card__date">
+      <h3 className="news-card__date">
         {new Date(article.publishedAt).toLocaleDateString("en-US", {
           year: "numeric",
           month: "long",
           day: "numeric",
+          timeZone:"UTC"
         })}
-      </h2>
-      <h1>{article.title}</h1>
-      <p>{article.description}</p>
-      <h3 className="news-card__source">
-        {article.source?.id || article.source?.name || "unknown Source"}
       </h3>
+      <h2>{article.title}</h2>
+      <p>{article.description}</p>
+      <h4 className="news-card__source">
+        {article.source?.id || article.source?.name || "unknown Source"}
+      </h4>
       </a>
     </div>
    

@@ -11,7 +11,7 @@ function Main({isLoggedIn,activeModal,handleLoginModal,handleRegisterModal,handl
   const [error, setError] = useState(null);
   const [hasSearched, setHasSearched] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
-  const [visibleCount, setVisibleCount] = useState(3);
+  
   const API_KEY = "9311ed1a839b439e8feb735c8169a497";
 
   const fetchNews = async (term) => {

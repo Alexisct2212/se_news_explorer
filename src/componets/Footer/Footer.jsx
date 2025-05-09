@@ -2,8 +2,7 @@ import { Link } from "react-router-dom";
 import "./Footer.css";
 import { SocialIcon } from 'react-social-icons'
 function Footer() {
-  const Facebook = <SocialIcon url="https://facebook.com" fgColor="white" bgColor="black" style={{ width: 24, height: 24 }}/>
-  const Github = <SocialIcon url="https://github.com/alexisct2212" fgColor="white" bgColor="black" style={{ width: 24, height: 24 }}/>
+  
   const year = new Date().getFullYear()
   return (
     <footer className="footer">

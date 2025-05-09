@@ -4,7 +4,7 @@ import NewsCardItem from "../NewsCardItem/NewsCarditem";
 import { useState } from "react";
 
 
-const NewsCard = ({isLoggedIn,news,loading,error,hasSearched}) => {
+const NewsCard = ({isLoggedIn,news,loading,error,}) => {
 
   const [visibleCount, setVisibleCount] = useState(3);
   

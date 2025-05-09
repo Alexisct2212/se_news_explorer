@@ -6,7 +6,7 @@ function Preloader({ foundNews }) {
     <div  className="Preloader">
       <div className="Preloader__search">
         <div className="circle-preloader"></div>
-        <h1 className="Preloader__text"> Searching for news ...</h1>
+        <h2 className="Preloader__text"> Searching for news ...</h2>
       </div>
     </div>
     );

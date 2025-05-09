@@ -3,6 +3,7 @@ const newsApiBaseUrl = process.env.NODE_ENV === "production"
 : "https://newsapi.org/v2/everything";
   const NewsApi = async (apiKey,searchTerm) => {
     try {
+      const apiKey = "9311ed1a839b439e8feb735c8169a497";
       const today = new Date();
     const sevenDaysAgo = new Date(today);
     sevenDaysAgo.setDate(today.getDate() - 30);
@@ -25,6 +26,7 @@ const newsApiBaseUrl = process.env.NODE_ENV === "production"
         return hasImage && (title.includes(keyword) || description.includes(keyword));
       });
   
+      console.log(filtered)
       return filtered;
     } catch (error) {
       console.error("Error fetching news:", error.message);

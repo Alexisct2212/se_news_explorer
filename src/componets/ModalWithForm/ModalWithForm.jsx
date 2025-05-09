@@ -1,4 +1,4 @@
-import { Children } from "react";
+import { children } from "react";
 import "./ModalWithForm.css";
 function ModalWithForm({ children, title, buttonText, isOpen,onSubmit,handleClose}) {
   const handleSubmit = (e)=>{
