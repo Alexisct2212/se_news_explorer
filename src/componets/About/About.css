@@ -20,7 +20,7 @@
 }
 .about__subtext{
     max-width: 600px;
-    font-family: "Roboto";
+    font-family: "Roboto",Arial, sans-serif;
     font-weight: 400;
     font-display: swap;
     font-style: normal;
@@ -28,7 +28,7 @@
 }
 
 .about__title{
-    font-family: "Roboto Slab";
+    font-family: "Roboto Slab",Arial, sans-serif;
     font-weight: 400;
     font-display: swap;
     font-style: normal;

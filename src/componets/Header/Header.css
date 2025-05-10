@@ -1,6 +1,7 @@
 .header {
   display: flex;
   justify-content: space-between;
+  position: relative;
   height: 80px;
   width: 1440px;
   font-size: 18px;
@@ -13,7 +14,7 @@
   width: 200px;
   height: 24px;
   margin: 30px auto 26px 104px;
-  font-family: "Roboto";
+  font-family: "Roboto",Arial, sans-serif;
   font-weight: 700;
 }
 
@@ -23,13 +24,13 @@
   margin: 0 108px 0 0;
 }
 .header__savedArticles-btn{
-  margin-left: 66px;
-  width: 120px;
+  margin-left: 40px;
+  width: 100%;
   height: 24px;
   background-color: transparent;
   border: none;
   color:#B6BCBF;
-  font-family: "Roboto";
+  font-family: "Roboto",Arial, sans-serif;
   font-weight: 500;
 }
 
@@ -48,7 +49,7 @@
   border-radius: 50px;
   width: 100px;
   color:white;
-  font-family: "Roboto";
+  font-family: "Roboto",Arial, sans-serif;
   font-weight: 500;
 }
 .header__logout-img{
@@ -69,7 +70,7 @@
   border: 1px solid #ffffff;
   margin: 0px 0px 0px 42px;
   cursor: pointer;
-  font-family: "Roboto";
+  font-family: "Roboto",Arial, sans-serif;
    font-weight: 500;
 }
 
@@ -84,7 +85,7 @@
   background-color: transparent;
   cursor: pointer;
   position: relative;
-  font-family: "Roboto";
+  font-family: "Roboto",Arial, sans-serif;
     font-weight: 500;
 }
 
@@ -277,15 +278,13 @@
   width: 288px;
 }
 .header__logout-btn,.header__savedArticles-btn{
-  left: 45px;
+  margin: 10px 0 0 20px;
   
-  
-
 }
 .header__logout-btn{
   width: 288px;
   justify-content:space-around;
-  margin: 10px 0 0 20px;
+  
   
 }
 .header__home-page{
@@ -295,26 +294,11 @@
 }
 .header__savedArticles-btn{
   margin: 15px 0 15px 30px;
+  width: 130px;
 }
 .selected__button.line_active {
   top:10px;
   
 }
 
-}
-@media (width<376px){
-  .header__signup { 
-    right: -40px;
-  }
-}
-@media (width<330px){
-  .header__signup { 
-    right: -20px;
-  }
-  .header__logout-btn{
-    left: 10px;
-  }
-  .header__savedArticles-btn{
-    left: 45px;
-  }
 }

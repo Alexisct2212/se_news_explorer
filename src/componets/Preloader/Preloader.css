@@ -29,7 +29,7 @@
     height: 20px;
     color: #B6BCBF;
     font-size: 16px;
-    font-family: "Roboto";
+    font-family: "Roboto",Arial, sans-serif;
     font-weight: 400;
   }
 
@@ -54,7 +54,7 @@
   color:#1a1b22;
   margin: 31px auto 0 auto;
   text-align: center;
-  font-family: "Roboto Slab";
+  font-family: "Roboto Slab",Arial, sans-serif;
   font-weight: 500;
 }
 .preloader__subtext{
@@ -63,7 +63,7 @@
   color: #B6BCBF;
   margin: 16px auto 80px auto;
   text-align: center;
-  font-family: "Roboto";
+  font-family: "Roboto",Arial, sans-serif;
   font-weight: 400;
 }
 @media (width<376px) {

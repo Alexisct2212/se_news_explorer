@@ -36,7 +36,7 @@ function Header({ isLoggedIn,handleLoginModal,handleSignout}) {
         <>
           
           <button
-            className={`header__home-page ${isHome  ? "selected" : ""}`}
+            className={`header__home-page  ${isHome  ? "selected" : ""}`}
             onClick={()=>navigate("/")}
           >
             Home
