@@ -1,22 +1,118 @@
-.search__bar-container{
+.search{
+    display: flex;
     position: relative;
-    top:80px;
+    top:70px;
+    left: 70px;
+    width: 776px;
+    justify-content: space-between;
+    align-items: center;
+    margin: 30px;
 }
 .search__input{
+    text-indent: 25px;
     height: 64px;
     width: 608px;
     border-radius: 75px;
     border: none;
+    font-family: "Roboto",Arial, sans-serif;
+    font-weight: 500;
 }
-.search__btn{
-    background-color: #2F71E5;
-    color: white;
-    border: none;
+.search__button{
     position: absolute;
-    right:0px;
+    background-color:#2F71E5;
+    color: white;
+    border:none;
+    right:163px;
     top: -1px;
     height: 70px;
     width: 168px;
     border-radius: 75px;
     cursor: pointer;
+    font-family: "Roboto",Arial, sans-serif;
+    font-weight: 400;
 }
+.search__button:hover{
+    background-color: #347EFF;
+    
+}
+.search__button:active{
+    background-color:#2A65CC;
+}
+@media (width<926px ) {
+    .search{
+        width: 600px;
+        top: 50px;
+    }
+    .search__input{
+        width:500px ;
+    }
+    .search__button{
+        width: 200px;
+        right: 95px;
+    }
+    }
+    @media (width<826px ) {
+        .search{
+            width: 600px;
+        }
+        .search__input{
+            width:500px ;
+        }
+        .search__button{
+            width: 200px;
+        }
+        }
+@media (width<=769px) {
+    .search{
+        top:-50px;
+        left: 0px;
+        max-width: 448px;
+    }
+    .search__input{
+       max-width: 448px;
+       height: 56px;
+    }
+    .search__button{
+    right:-1px;
+    top: 0px;
+    height: 60px;
+    width: 160px;
+    }
+}
+@media (width<505px ) {
+    .search{
+        width: 80%;
+    }
+}
+@media (width<426px ) {
+   .search{
+    width: 100%;
+    top:60px;
+    margin: 0 16px 0 16px;
+    flex-direction: column;
+    align-items: center;
+   }
+   .search__input{
+    width: 288px;
+   }
+   .search__button{
+    width: 288px;
+    position: relative;
+    top: 20px;
+    right: 0px;
+   }
+  }
+  
+  @media (width<376px ) {
+    .search__button{
+        right: 0px;
+    }
+    }
+    @media (width<321px ) {
+        .search__button{
+            right: 0px;
+        }
+        .search{
+            top: 60px;
+        }
+        }

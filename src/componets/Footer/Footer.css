@@ -4,16 +4,19 @@
     line-height: 22px;
     align-items: center;
     justify-content: space-between;
-  
-    max-width: 1440px;
-    
+    background: #fff;
+    max-width: 100%;
+    height: 80px;
+    font-family: "Roboto",Arial, sans-serif;
+    font-weight: 400;
   }
   .footer__right-side {
     display: flex;
     gap: 40px; /* Space between elements on the right side */
-  
+    margin-right: 100px;
   }
   .footer__left-side {
+    margin-left: 100px;
     display: flex; 
     gap: 10px; /* Space between year and name */
     color: #b6bcbf;
@@ -28,8 +31,74 @@
   .Tripleten__url,
   .github__logo,
   .facebook__logo {
-    margin: 0;
+    margin: 0 ;
     cursor: pointer;
     border: none;
     background: none;
   }
+  a,Link{
+    color: black;
+    text-decoration: none;
+  }
+  @media (width<770px ) {
+    .footer__left-side{
+      margin-left: 40px;
+    }
+  }
+  @media (width<480px ) {
+    .footer{
+      height: 80px;
+      flex-direction: column-reverse;
+      padding-top: 30px;
+    }
+    .footer__right-side{
+      gap: 60px;
+      margin: 0px auto 35px;
+    }
+    .footer__left-side{
+      margin: 0;
+      letter-spacing: 2px;
+    }
+    .Tripleten__url{
+      position: relative;
+      top: 30px;
+      right: 100px;
+      padding: 10px 0;
+    }
+    }
+  
+    @media (width<376px ) {
+      .footer__right-side{
+        gap: 50px;
+        margin: 0px auto 35px;
+      }
+      .footer__left-side{
+        margin: 0;
+        gap: 20px;
+      }
+      .Tripleten__url{
+        top: 30px;
+        right: 90px;
+      }
+      .footer {
+        padding-top: 50px;
+    }
+
+    }
+    @media (width<321px ) {
+      .footer__right-side{
+        gap: 40px;
+        margin: 0px auto 35px;
+      }
+      .footer__left-side{
+        margin: 0;
+        gap: 10px;
+      }
+      .Tripleten__url{
+        top: 30px;
+        right: 82px;
+      }
+      .footer{
+        padding-top: 70px;
+      }
+    }

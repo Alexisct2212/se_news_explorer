@@ -1,24 +1,112 @@
-.About{
- max-width: 1400px;
+.about{
+ max-width: 1440px;
  height: 624px;
  display: flex;
  align-items: center;
-
+ background-color: #fff;
  position: relative;
 }
-.about_me-avatar{
+.about__author-img{
+    margin-left: 104px;
+    margin-right: 56px;
     height: 464px;
     width: 464px;
     border-radius: 1000px;
     
 }
 .around__circle{
-   position: absolute;
-   height: 170px;
-   max-width: 600px;
-   top:131px;
-   left:624px;
+  flex: 1;
+  max-width: 600px;
 }
-.about__subtext,.about__subtext_2{
+.about__subtext{
     max-width: 600px;
+    font-family: "Roboto",Arial, sans-serif;
+    font-weight: 400;
+    font-display: swap;
+    font-style: normal;
+    margin-bottom: 20px;
 }
+
+.about__title{
+    font-family: "Roboto Slab",Arial, sans-serif;
+    font-weight: 400;
+    font-display: swap;
+    font-style: normal;
+    font-size: 40px;
+}
+@media (width<1025px) {
+    .about__author-img{
+        height: 332px;
+        width: 332px;
+        margin-left: 40px;
+        margin-right: 32px;
+    }
+    .about__subtext{
+        max-width: 424px;
+        height: 100px;
+        overflow: scroll;
+    }
+   
+  }
+@media (width<861px) {
+    .about__author-img{
+        height: 332px;
+        width: 332px;
+        margin-left: 40px;
+        margin-right: 32px;
+    }
+    .about__subtext{
+        max-width: 424px;
+        height: 100px;
+        overflow: scroll;
+    }
+    
+  }
+  @media (width<=769px) {
+    .about__author-img{
+        height: 232px;
+        width: 232px;
+        margin-left: 40px;
+        margin-right: 32px;
+    }
+    .about__subtext{
+        max-width: 424px;
+        height: 100px;
+        overflow: scroll;
+    }
+    
+  }
+
+ 
+
+  @media (width<570px ) {
+    .about{
+        flex-direction: column;
+    }
+    .about__title{
+        font-size: 30px;
+        text-align: center;
+    }
+    .about__author-img{
+        height: 272px;
+        width: 272px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    
+    .about__subtext{
+        height: fit-content;
+        width: 350px;
+        }
+    }
+    @media (width<376px ) {
+        .about__subtext{
+            height: fit-content;
+            max-width: 288px;
+            }
+    }
+    @media (width<321px ) {
+        .about__subtext{
+            width: 288px;
+        }
+    }

@@ -1,0 +1,18 @@
+.successful_text{
+   font-size: 24px;
+   width: 315px;
+   height: 56px;
+   line-height: 28px;
+
+}
+.modal__success-button{
+    max-width: 218px;
+    height: 18px;
+    background-color: transparent;
+    color:#2F71E5;
+    position: relative;
+    top:10px;
+    left:0px;
+    text-align: left;
+    border: none;
+}

@@ -1,8 +1,8 @@
+import { Link } from "react-router-dom";
 import "./Footer.css";
 import { SocialIcon } from 'react-social-icons'
 function Footer() {
-  const Facebook = <SocialIcon url="https://facebook.com" fgColor="white" bgColor="black" style={{ width: 24, height: 24 }}/>
-  const Github = <SocialIcon url="https://github.com/alexisct2212" fgColor="white" bgColor="black" style={{ width: 24, height: 24 }}/>
+  
   const year = new Date().getFullYear()
   return (
     <footer className="footer">
@@ -11,8 +11,8 @@ function Footer() {
       <p className="footer__developer">Developed by Alexis Castillo</p>
       </div>
       <div className="footer__right-side">
-      <p className="home__btn">Home</p>
-      <p className="Tripleten__url">Tripleten</p>
+      <Link to="/"><p className="home__btn">Home</p></Link>
+      <a href="https://tripleten.com" target="_blank"><p className="Tripleten__url">Tripleten</p></a>
       <SocialIcon
   url="https://github.com/alexisct2212"
   target="_blank"

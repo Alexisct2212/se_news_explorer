@@ -1,36 +1,67 @@
 .header {
   display: flex;
   justify-content: space-between;
-  padding: 19px 0 0px;
+  position: relative;
   height: 80px;
+  width: 1440px;
   font-size: 18px;
   line-height: 24.8px;
   border-bottom: 1px solid #ffffff7a;
-  position: relative;
+  
 }
 
 .header__logo {
-  width: 89px;
-  height: 40px;
-  margin: 15px auto 30px 104px;
+  width: 200px;
+  height: 24px;
+  margin: 30px auto 26px 104px;
+  font-family: "Roboto",Arial, sans-serif;
+  font-weight: 700;
 }
 
-.header__user_info {
+.header__nav {
   display: flex;
   align-items: center;
   margin: 0 108px 0 0;
 }
-
-.header__username {
-  padding-right: 12px;
+.header__savedArticles-btn{
+  margin-left: 40px;
+  width: 100%;
+  height: 24px;
+  background-color: transparent;
+  border: none;
+  color:#B6BCBF;
+  font-family: "Roboto",Arial, sans-serif;
+  font-weight: 500;
 }
 
+.header__logout-btn{
+  width: 140px;
+  height: 60px;
+  margin: 0 0 0 64px;
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+  border:1px solid #D1D2D6;
+  border-radius: 40px;
+}
+.header__username-title {
+  background: transparent;
+  border-radius: 50px;
+  width: 100px;
+  color:white;
+  font-family: "Roboto",Arial, sans-serif;
+  font-weight: 500;
+}
+.header__logout-img{
+  width: 24px;
+  height: 24px;
+}
 .Profile__header-link {
   text-decoration: none;
   color: black;
 }
 
-.header__signup {
+.header__signup-btn {
   background-color: transparent;
   color: white;
   width: 176px;
@@ -39,6 +70,8 @@
   border: 1px solid #ffffff;
   margin: 0px 0px 0px 42px;
   cursor: pointer;
+  font-family: "Roboto",Arial, sans-serif;
+   font-weight: 500;
 }
 
 .header__user_avatar {
@@ -46,12 +79,14 @@
   width: 40px;
 }
 
-.home__page {
+.header__home-page {
   border: none;
   color: white;
   background-color: transparent;
   cursor: pointer;
   position: relative;
+  font-family: "Roboto",Arial, sans-serif;
+    font-weight: 500;
 }
 
 .selected {
@@ -79,4 +114,191 @@
   top:29px;
   height: 3px;
   background: white;
+}
+.header--transparent {
+  background-color: transparent;
+  color: white;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Solid white for other pages */
+.header--white {
+  background-color: white;
+  color: black;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.header--white .header__home-page,
+.header--white .header__savedArticles-btn,.header--white .header__savedArticles-btn,
+.header--white .header__signup-btn,
+.header--white .header__username-title {
+  color: black;
+  border-color: black;
+}
+
+.header--white .selected__button,
+.header--white .selected__button.line_active {
+  background-color: black;
+}
+.header__menu-toggle{
+  
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 25px;
+    height: 20px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 20;
+  
+}
+.header__menu-toggle:focus {
+  outline: none;
+}
+.menu-icon{
+    width: 100%;
+    height: 3px;
+    border-radius: 2px;
+}
+.header__menu--open {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 250px;
+  background-color: white;
+  z-index: 15;
+  gap: 0px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+.header__link-home{
+  width: 0;
+}
+@media (width<=1439px) {
+  .header{width: 100%;}
+}
+@media (width<=1024px) {
+  .header__nav{
+    margin: 0 20px 0 0;
+  }
+  .header__savedArticles-btn{
+    margin-left: 40px;
+  }
+}
+@media (width<=769px) {
+  .header{
+   max-width:769px
+  }
+  .header__logo {
+    max-width: 200px;
+    height: 24px;
+    margin: 30px auto 20px 40px;
+  }
+  .header__signup { 
+    width: 152px;
+    height: 40px;
+    margin: 14px 40px 12px 16px;
+  }
+  .header__nav{
+    margin:0;
+  }
+ 
+  .header__savedArticles-btn{
+    margin-left: 16px;
+  }
+  .header__logout-btn{
+    margin: 0 20px 0 24px;
+  }
+}
+@media (width<=645px) {
+.header__nav.header__menu--open{
+  
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: transparent;
+    z-index: 10;
+    border-radius: 8px;
+    width: 100%;
+}
+.header__logo{
+  margin: 30px 30px 20px 0px;
+  position: relative;
+  z-index: 99;
+}
+.header__nav{
+  display: none;
+}
+
+.header--white .header__nav {
+  background-color: white;
+}
+
+.header--transparent .header__nav {
+  background-color: black;
+
+}
+
+.header__menu-toggle {
+  display: flex;
+  position: absolute;
+  top: 30px;
+  right: 30px;
+}
+
+.menu-icon {
+  width: 24px;
+  height: 24px;
+  background-image: url("../../assets/menu.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.black-menu-icon {
+  width: 24px;
+  height: 24px;
+  background-image: url("../../assets/menu-saved-news.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.header__signup { 
+  width: 288px;
+  height: 40px;
+  margin: 0;
+  position: relative;
+  right: -60px;
+  top:30px
+}
+.header__signup-btn{
+  margin:30px 0 0 20px ;
+  width: 288px;
+}
+.header__logout-btn,.header__savedArticles-btn{
+  margin: 10px 0 0 20px;
+  
+}
+.header__logout-btn{
+  width: 288px;
+  justify-content:space-around;
+  
+  
+}
+.header__home-page{
+  position: unset;
+  margin: 40px 0 10px 35px;
+  
+}
+.header__savedArticles-btn{
+  margin: 15px 0 15px 30px;
+  width: 130px;
+}
+.selected__button.line_active {
+  top:10px;
+  
+}
+
 }

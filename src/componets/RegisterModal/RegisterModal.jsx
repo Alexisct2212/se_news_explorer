@@ -1,12 +1,109 @@
+import ModalWithForm from "../ModalWithForm/ModalWithForm";
 import "./RegisterModal.css";
+import { useState, useEffect } from "react";
 
-function RegisterModal() {
-  
+const RegisterModal = ({
+  closeActiveModal,
+  handleLoginModal,
+  isOpen,
+  onRegister,
+  buttonClass = "modal__submit",
+}) => {
+  const [name, setName] = useState("");
+  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("");
+  const [isButtonActive, setIsButtonActive] = useState(false);
+
+  useEffect(() => {
+    setIsButtonActive(
+      email.trim() !== "" &&
+        password.trim() !== "" &&
+        name.trim() !== "" 
+    );
+  }, [email, password, name]);
+
+  useEffect(() => {
+    if (isOpen) {
+      setName("");
+      setPassword("");
+      setEmail("");
+    }
+  }, [isOpen]);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    onRegister({ name, email, password });
+  };
+
   return (
-    <div className="RegisterModal">
-
-    </div>
+    <ModalWithForm
+      title="Sign up"
+      buttonText="Sign Up"
+      isOpen={isOpen}
+      onClose={closeActiveModal}
+      onSubmit={handleSubmit}
+      name="register"
+      isButtonDisabled={!isButtonActive}
+    >
+      <button
+        className="modal__close"
+        type="button"
+        onClick={closeActiveModal}
+      />
+      <label  className="modal__label">
+        Email
+        <input
+          type="email"
+          className="modal__input"
+          id="register-email"
+          name="email"
+          placeholder="Email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          required
+          autoComplete="email"
+        />
+      </label>
+      <label  className="modal__label">
+        Password
+        <input
+          type="password"
+          className="modal__input"
+          id="register-password"
+          name="password"
+          placeholder="Password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          required
+          autoComplete="new-password"
+        />
+      </label>
+      <label  className="modal__label">
+        Username
+        <input
+          type="text"
+          className="modal__input"
+          id="register-name"
+          name="name"
+          placeholder="Name"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          required
+          autoComplete="name"
+        />
+      </label>
+      <div className="modal__buttons-container">
+      
+        <button
+          type="button"
+          className="modal__login-button"
+          onClick={handleLoginModal}
+        >
+          or Sign in
+        </button>
+      </div>
+    </ModalWithForm>
   );
-}
+};
 
 export default RegisterModal;

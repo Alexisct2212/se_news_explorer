@@ -1,65 +1,84 @@
 import "./Header.css";
 import logo from "../../assets/NewsExplorer-white.svg";
-import { Link } from "react-router-dom";
+import blackLogo from "../../assets/NewsExplorer.svg"
+import { useNavigate,useLocation } from "react-router-dom";
 import CurrentUserContext from "../../context/CurrenteUserContext";
 import { useContext, useState } from "react";
-
-function Header({ activeModal, isLoggedIn, handleRegisterModal }) {
+import logOutWhite from "../../assets/logout-white.png";
+import logOut from "../../assets/logout.png";
+import menu from "../../assets/menu.png"
+import blackmenu from "../../assets/menu-saved-news.png"
+function Header({ isLoggedIn,handleLoginModal,handleSignout}) {
   const CurrentUser = useContext(CurrentUserContext);
+  const location =useLocation();
+  const navigate = useNavigate()
   const [activeButton, setActiveButton] = useState("");
-
+  const [menuOpen, setMenuOpen] = useState(false);
   const handleButtonClick = (button) => {
     setActiveButton(button);
+    
   };
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+  };
+  const isHome = location.pathname === "/";
 
   return (
-    <header className="header">
-      <Link to="/">
-        <img className="header__logo" src={logo} alt="header logo" />
-      </Link>
-
+    <header className={`header ${isHome ? "header--transparent" : "header--white"}`}>
+      
+        <img className="header__logo" src={isHome ? logo : blackLogo } alt="header logo" onClick={()=>navigate("/")}/>
+    
+      <button className="header__menu-toggle" onClick={toggleMenu}>
+        <span className={`${isHome ? "menu-icon": "black-menu-icon"}`} src={`${isHome ? menu: blackmenu}`}></span>
+      </button>
+      <nav className={`header__nav ${menuOpen ? "header__menu--open" : ""}`}>
       {isLoggedIn ? (
-        <div className="header__user_info">
+        <>
+          
           <button
-            className={`home__page ${activeButton === "home" ? "selected" : ""}`}
-            onClick={() => handleButtonClick("home")}
+            className={`header__home-page  ${isHome  ? "selected" : ""}`}
+            onClick={()=>navigate("/")}
           >
             Home
-            <div className={`selected__button ${activeButton === "home" ? "line_active" : ""}`}></div>
+            <div className={`selected__button ${isHome  ? "line_active" : ""}`}></div>
           </button>
+          
           <button
-            className={`saved__articles ${activeButton === "saved" ? "selected" : ""}`}
-            onClick={() => handleButtonClick("saved")}
+            className={`header__savedArticles-btn ${!isHome  ? "selected" : ""}`}
+            onClick={() =>navigate("/saved-news")}
           >
             Saved articles
-            <div className={`selected__button ${activeButton === "saved" ? "line_active" : ""}`}></div>
+            <div className={`selected__button ${!isHome  ? "line_active" : ""}`}></div>
           </button>
-          <div className="user__logout-btn">
-            <p className="header__username">{CurrentUser.name}</p>
-          </div>
-        </div>
+          
+          <button className="header__logout-btn" onClick={handleSignout}>
+            <p className="header__username-title">{CurrentUser.name}</p>
+            <img src={isHome ? logOutWhite : logOut} alt="logout btn" className="header__logout-img" />
+          </button>
+        </>
       ) : (
-        <div className='header__user_info'>
+        <>
           <button
-            className={`home__page ${activeButton === "home" ? "selected" : ""}`}
-            onClick={() => handleButtonClick("home")}
+            className={`header__home-page ${isHome ? "selected" : ""}`}
+            onClick={() => {setMenuOpen(false);handleButtonClick("home")}}
           >
             Home
-            <div className={`selected__button ${activeButton === "home" ? "line_active" : ""}`}></div>
+            <div className={`selected__button ${isHome  ? "line_active" : ""}`}></div>
           </button>
+          
           <button
-            className={`header__signup ${activeButton === "signin" ? "selected" : ""}`}
+            className={`header__signup-btn ${activeButton === "signin" ? "selected" : ""}`}
             type="button"
-            onClick={() => {
-              handleButtonClick("signin");
-              handleRegisterModal();
-            }}
+            onClick={()=>{setMenuOpen(false); handleLoginModal();}}
           >
             Sign in
             <div className={`selected__button ${activeButton === "signin" ? "line_active" : ""}`}></div>
+            
           </button>
-        </div>
+          
+        </>
       )}
+      </nav>
     </header>
   );
 }

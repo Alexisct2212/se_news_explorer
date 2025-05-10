@@ -1,4 +1,4 @@
-import { Children } from "react";
+import { children } from "react";
 import "./ModalWithForm.css";
 function ModalWithForm({ children, title, buttonText, isOpen,onSubmit,handleClose}) {
   const handleSubmit = (e)=>{
@@ -12,9 +12,11 @@ function ModalWithForm({ children, title, buttonText, isOpen,onSubmit,handleClos
         <button className="modal__close" onClick={handleClose}></button>
         <form className="modal__form" onSubmit={handleSubmit}>
           {children}
-          <button className="modal__submit" type="submit" >
-            {buttonText}
-          </button>
+          {buttonText && (
+  <button type="submit" className="modal__submit">
+    {buttonText}
+  </button>
+)}
         </form>
       </div>
     </div>

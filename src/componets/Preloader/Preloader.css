@@ -4,7 +4,6 @@
   display: flex;
   justify-content: center;
   align-content: center;
-  background-color: #F5F6F7;
 }
 .circle-preloader {
     width: 74px;
@@ -13,18 +12,25 @@
     border-bottom-color: #888;
     border-radius: 50%;
     position: relative;
-    top: 90px;
-    left:40%;
+    top: 50px;
+    left:0px;
     margin: auto;
     animation: spin .75s infinite linear;
   }
+  .Preloader__Error-img{
+    position: relative;
+    top: 0;
+    right: -130px;
+  }
   .Preloader__text{
-    position: absolute;
-    left: 49%;
-    bottom: 0%;
-    color: black;
+    position: relative;
+    left: 0;
+    bottom: -30%;
     height: 20px;
-    
+    color: #B6BCBF;
+    font-size: 16px;
+    font-family: "Roboto",Arial, sans-serif;
+    font-weight: 400;
   }
 
   
@@ -35,51 +41,9 @@
   }
   /* styling for 404 error*/
   .Preloader_Error{
-   position: absolute;
-    left:720px;
     margin: 56px auto;
   }
-  .face {
-    width: 100px;
-    height: 100px;
-    background-color: transparent;
-    border: #D1D2D6 solid 1px;
-    border-radius: 50%;
-    position: relative;
-    left: 50px;
-  }
-  
-  .eye {
-    width: 5px;
-    height: 5px;
-    background-color: #D1D2D6;
-    border-radius: 50%;
-    position: absolute;
-    top: 30px;
-  }
-  
-  .left-eye {
-    left: 25px;
-  }
-  
-  .right-eye {
-    right: 25px;
-  }
-  
-  .mouth {
-    width: 50px;
-    height: 20px;
-    border-bottom: 1px solid #D1D2D6;
-    position: absolute;
-    bottom: 5px;
-    left: 50%;
-    transform: translatex(45%);
-    rotate: 180deg;
-    border-radius: 50%; /* Creates a downward curve */
-  }
-  .stick {
-    width:50px
-  }
+
 .text{
   width: 356px;
 
@@ -89,62 +53,31 @@
   font-size: 26px;
   color:#1a1b22;
   margin: 31px auto 0 auto;
+  text-align: center;
+  font-family: "Roboto Slab",Arial, sans-serif;
+  font-weight: 500;
 }
 .preloader__subtext{
   height: 48px;
   font-size: 18px;
   color: #B6BCBF;
   margin: 16px auto 80px auto;
+  text-align: center;
+  font-family: "Roboto",Arial, sans-serif;
+  font-weight: 400;
 }
-
-  /* circle searching
-<div className="Preloader">
-      {foundNews?(
-      <div className="Preloader__search">
-      <div className="circle-preloader">
-      </div>
-      <p className="Preloader__text"> Searching for news ...</p>
-      </div>):(
-      <div className="Preloader_Error">
-      <div className="face">
-         <div className="eye left-eye"></div>
-         <div className="eye right-eye"></div>
-         <div className="mouth"></div>
-         <div className="stick"></div>
-      </div>
-        <p className="Preloader__Main-text">
-          Nothing Found
-        </p>
-        <p className="preloader__subtext">Sorry, but nothing matched your search terms.</p>
-      </div>)}
-    </div>
-
-  */
-  /*
-  sad face
-   <div className="Preloader">
-      {foundNews?(
-         <div className="Preloader_Error">
-      <div className="face">
-      <div className="eye left-eye"></div>
-      <div className="eye right-eye"></div>
-      <div className="mouth"></div>
-      <div className="stick"></div>
-   </div>
-   <div className="text">
-     <p className="preloader__subtext">Sorry, but nothing matched your search terms.</p>
-     <p className="Preloader__Main-text">
-       Nothing Found
-     </p>
-
-   </div>
-   </div>
-      ):(
-        <div className="Preloader__search">
-      <div className="circle-preloader">
-      </div>
-      <p className="Preloader__text"> Searching for news ...</p>
-      </div>
-      )}
-    </div>
-  */
+@media (width<376px) {
+  .Preloader_Error{
+    width: 300px;
+  }
+  .preloader__subtext,.Preloader__Main-text{
+    width: 300px;
+    margin: 30px auto;
+  }
+  .text{
+    width: 300px;
+  }
+  .Preloader__Error-img{
+    right: -100px;
+  }
+}

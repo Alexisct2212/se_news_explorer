@@ -1,9 +1,126 @@
-function SavedNews() {
+import { useContext, useEffect, useState,useMemo } from "react";
+import CurrentUserContext from "../../context/CurrenteUserContext";
+import "./SavedNews.css";
+import NewsCardItem from "../NewsCardItem/NewsCarditem";
+import { useNavigate } from "react-router-dom";
+import Header from "../Header/Header";
+
+
+function SavedNews({ isLoggedIn,handleSignout,activeModal }) {
+  const CurrentUser = useContext(CurrentUserContext);
+  const [savedArticles, setSavedArticles] = useState([]);
+  const navigate = useNavigate();
+  useEffect(() => {
+    const saved = localStorage.getItem("savedArticles");
+    try {
+      const parsed = JSON.parse(saved);
+      if (Array.isArray(parsed)) {
+        if (parsed.length === 0) {
+          navigate("/"); // redirect if array is empty
+        } else {
+          setSavedArticles(parsed);
+        }
+      } else {
+        setSavedArticles([]);
+        navigate("/"); // fallback if not an array
+      }
+    } catch (error) {
+      console.error("Invalid savedArticles in localStorage:", error);
+      setSavedArticles([]);
+      navigate("/"); // fallback if JSON is invalid
+    }
+  }, [navigate]);
+  
+
+
+  const handleDelete = (deletedArticle) => {
+    const updated = savedArticles.filter((a) => a.url !== deletedArticle.url);
+    setSavedArticles(updated);
+    localStorage.setItem("savedArticles", JSON.stringify(updated));
+  };
+
+  // 🔠 Extract keywords from saved articles
+  
+  const keywordList = useMemo(() => {
+    if (!Array.isArray(savedArticles)) return [];
+  
+    const keywordCounts = {};
+  
+    savedArticles.forEach((article) => {
+      if (!article?.title) return; // 💡 skip if title is missing
+      const titleWords = article.title
+        .toLowerCase()
+        .replace(/[^a-z0-9 ]/gi, "")
+        .split(" ")
+        .filter((word) => word.length > 3);
+  
+      titleWords.forEach((word) => {
+        keywordCounts[word] = (keywordCounts[word] || 0) + 1;
+      });
+    });
+  
+    return Object.entries(keywordCounts)
+      .sort((a, b) => b[1] - a[1])
+      .map(([word]) => word)
+      .slice(0, 3);
+  }, [savedArticles]);
+
+  
+
   
   return (
-    <div className="main__header">
-
-    </div>
+    <section className="savedNews">
+      <Header isLoggedIn={isLoggedIn}
+      activeModal={activeModal}
+      handleSignout={handleSignout}/>
+      <div className="savedNews__header">
+        <h1 className="savedNews__header-text">Saved articles</h1>
+        <p className="savedNews__header-subtext">
+          {CurrentUser.name}, you have {savedArticles.length} saved{" "}
+          {savedArticles.length === 1 ? "article" : "articles"}
+        </p>
+        {keywordList.length > 0 && (
+          <p className="savedNews__header-keywords">
+            By keywords: <b>{keywordList.join(", ")}
+            {savedArticles.length > 3 &&`, and ${savedArticles.length - 3} others`}</b>
+          </p>
+        )}
+      </div>
+      <div className="SavedNews__container">
+      <section className="SavedNews__cards">
+        {savedArticles.length > 0 ? (
+          savedArticles.map((article, index) => {
+            // Extract one keyword from the title
+            let keyword = "";
+            if (article?.title) {
+              const titleWords = article.title
+                .toLowerCase()
+                .replace(/[^a-z0-9 ]/gi, "")
+                .split(" ")
+                .filter((word) => word.length > 3);
+              keyword = titleWords[0] || "";
+            }
+            
+            return (
+             
+              <NewsCardItem
+                key={index}
+                article={article}
+                isSaved={true}
+                onDelete={handleDelete}
+                keyword={keyword}
+                isLoggedIn={isLoggedIn}
+              />
+            )
+          })
+        ) : (
+          <div className="no-saved-Articles">
+            <h2 className="no__saved-text">You haven't saved any article, Go to home page to save any article</h2>
+          </div>
+        )}
+      </section>
+        </div>
+    </section>
   );
 }
 
